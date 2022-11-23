@@ -1444,6 +1444,7 @@ GameObject:
   - component: {fileID: 407374}
   - component: {fileID: 9571598}
   - component: {fileID: -8834612836837094132}
+  - component: {fileID: 6373034494862528353}
   m_Layer: 0
   m_Name: Character_Male_Hoodie_01
   m_TagString: Untagged
@@ -1509,6 +1510,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.57075876, y: 1.7499173, z: 0.4184474}
   m_Center: {x: -1.9639071e-10, y: 0.9, z: 0}
+--- !u!114 &6373034494862528353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10fe6ca7e9d577489f5167e231f43bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 20
+  _animator: {fileID: 9571598}
 --- !u!1 &154910
 GameObject:
   m_ObjectHideFlags: 0

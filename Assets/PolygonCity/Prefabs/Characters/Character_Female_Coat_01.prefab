@@ -2457,6 +2457,7 @@ GameObject:
   - component: {fileID: 466842}
   - component: {fileID: 9529026}
   - component: {fileID: 6017760994994529327}
+  - component: {fileID: -8339098191054634905}
   m_Layer: 0
   m_Name: Character_Female_Coat_01
   m_TagString: Untagged
@@ -2522,6 +2523,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.57075876, y: 1.7499173, z: 0.4184474}
   m_Center: {x: -1.9639071e-10, y: 0.9, z: 0}
+--- !u!114 &-8339098191054634905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 184310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f10fe6ca7e9d577489f5167e231f43bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHealth: 20
+  _animator: {fileID: 9529026}
 --- !u!1 &185414
 GameObject:
   m_ObjectHideFlags: 0
