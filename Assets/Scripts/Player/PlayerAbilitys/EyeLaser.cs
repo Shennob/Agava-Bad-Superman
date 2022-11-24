@@ -11,6 +11,7 @@ public class EyeLaser : MonoBehaviour
     [SerializeField] private float _timePerHit = 0.3f;
     [SerializeField] private PlayerEnergy _playerEnergy;
     [SerializeField] private float _energyCost = 5f;
+    [SerializeField] private LayerMask _ignoreMask;
 
     private bool _readyToShoot = false;
     private float _timeRemaining;
@@ -73,11 +74,12 @@ public class EyeLaser : MonoBehaviour
             }
             else
             {
-                if (Physics.Raycast(ray.origin, _direction, out hit, _maxLength))
+                if (Physics.Raycast(ray.origin, _direction, out hit, _maxLength, ~_ignoreMask))
                 {
                     if (hit.collider.TryGetComponent(out IHitable hitable))
                     {
                         hitable.ApplyDamage(_damage);
+                        Debug.Log("ДАМАГЕ");
                     }
                 }
 

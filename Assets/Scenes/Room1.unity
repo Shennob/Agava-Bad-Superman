@@ -22520,7 +22520,7 @@ MonoBehaviour:
     m_BlockList: []
     m_Default: 1
   m_InitCharacterOnAwake: 1
-  m_Character: {fileID: 0}
+  m_Character: {fileID: 1651361048}
   m_Anchor: {fileID: 0}
   m_AutoAnchor: 0
   m_AutoAnchorBone: 10
@@ -41486,7 +41486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxEnergy: 100
-  _stepTimeRestore: 0.5
+  _stepTimeRestore: 3
 --- !u!1001 &1651907720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -52672,10 +52672,13 @@ MonoBehaviour:
   _camera: {fileID: 907709744}
   _maxLength: 30
   _effectTemplate: {fileID: 1418158253269514, guid: 280b8b1393d77f148a8cbcfc7f36e116, type: 3}
-  _damage: 3
+  _damage: 10
   _timePerHit: 0.3
   _playerEnergy: {fileID: 1651361066}
   _energyCost: 5
+  _ignoreMask:
+    serializedVersion: 2
+    m_Bits: 3221225472
 --- !u!1001 &2064381856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54073,6 +54076,14 @@ PrefabInstance:
     - target: {fileID: 1689398004406407065, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
       propertyPath: _enableFireDelay
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689398004406407065, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
+      propertyPath: _leftVechicleExplouseForce.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689398004406407065, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
+      propertyPath: _rightVechicleExplouseForce.y
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3616506859605227427, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
       propertyPath: playOnAwake
