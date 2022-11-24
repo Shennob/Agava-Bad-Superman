@@ -28065,12 +28065,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 64222710617219654, guid: f539f0390d17a9f4a922b722e47998fe, type: 3}
-    - {fileID: 135760879445594346, guid: f539f0390d17a9f4a922b722e47998fe, type: 3}
-    - {fileID: 135216267257907734, guid: f539f0390d17a9f4a922b722e47998fe, type: 3}
-    - {fileID: 135745661254441854, guid: f539f0390d17a9f4a922b722e47998fe, type: 3}
-    - {fileID: 135155502016178280, guid: f539f0390d17a9f4a922b722e47998fe, type: 3}
-    - {fileID: 591173966518729117, guid: f539f0390d17a9f4a922b722e47998fe, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: f539f0390d17a9f4a922b722e47998fe, type: 3}
 --- !u!4 &1146882319 stripped
 Transform:
@@ -41486,7 +41485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxEnergy: 100
-  _stepTimeRestore: 3
+  _stepTimeRestore: 0.1
 --- !u!1001 &1651907720
 PrefabInstance:
   m_ObjectHideFlags: 0
