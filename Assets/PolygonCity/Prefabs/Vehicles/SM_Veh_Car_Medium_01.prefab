@@ -541,7 +541,7 @@ MonoBehaviour:
   _seocndRifgtVehicle: {fileID: 977514966672625653}
   _carMeshRenderer: {fileID: 2324734}
   _explouseionMaterial: {fileID: 2100000, guid: 71c3071c68050cb49afdbe588919598c, type: 2}
-  _carExplouseVector: {x: 0, y: 1000, z: 0}
+  _carExplouseVector: {x: 0, y: 500, z: 0}
   _rightVechicleExplouseForce: {x: 1000, y: 15, z: 0}
   _leftVechicleExplouseForce: {x: -1000, y: 15, z: 0}
   _cooldownDestroy: 15
@@ -550,7 +550,7 @@ MonoBehaviour:
   - {fileID: 182200}
   - {fileID: 133744}
   - {fileID: 169676}
-  _enableFireDelay: 5
+  _enableFireDelay: 4
 --- !u!54 &6758654298273702410
 Rigidbody:
   m_ObjectHideFlags: 0

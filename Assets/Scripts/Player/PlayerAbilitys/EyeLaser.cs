@@ -79,7 +79,6 @@ public class EyeLaser : MonoBehaviour
                     if (hit.collider.TryGetComponent(out IHitable hitable))
                     {
                         hitable.ApplyDamage(_damage);
-                        Debug.Log("ДАМАГЕ");
                     }
                 }
 

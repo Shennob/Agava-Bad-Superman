@@ -26331,7 +26331,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 411938, guid: 0383b854a926f1643b20f9c7cdb2e4de, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 411938, guid: 0383b854a926f1643b20f9c7cdb2e4de, type: 3}
       propertyPath: m_LocalPosition.z
@@ -36969,6 +36969,14 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 49ef76ea47782eb4b93ac08b234fd6c3, type: 2}
+    - target: {fileID: 3885234691881176656, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
+      propertyPath: _enableFireDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885234691881176656, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
+      propertyPath: _carExplouseVector.y
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64403533157552192, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
     - {fileID: 135375816075605608, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
@@ -45804,6 +45812,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 49ef76ea47782eb4b93ac08b234fd6c3, type: 2}
+    - target: {fileID: 3885234691881176656, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
+      propertyPath: _enableFireDelay
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64403533157552192, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
     - {fileID: 135375816075605608, guid: 85ac88d7c46e0ea4583870a98cc13580, type: 3}
@@ -48983,6 +48995,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c01b7c8cb1175b54aab24b670c2d58dd, type: 2}
+    - target: {fileID: 5607416073007141576, guid: edf6cb56e12fba648b2cf1e7dfa5bf88, type: 3}
+      propertyPath: _enableFireDelay
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 64398827108221090, guid: edf6cb56e12fba648b2cf1e7dfa5bf88, type: 3}
     - {fileID: 135891695195543874, guid: edf6cb56e12fba648b2cf1e7dfa5bf88, type: 3}
@@ -54075,6 +54091,10 @@ PrefabInstance:
     - target: {fileID: 1689398004406407065, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
       propertyPath: _enableFireDelay
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1689398004406407065, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
+      propertyPath: _carExplouseVector.y
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 1689398004406407065, guid: fcd06c9319e99cc4bbee7ce7730d9422, type: 3}
       propertyPath: _leftVechicleExplouseForce.y

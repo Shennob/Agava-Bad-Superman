@@ -22,6 +22,8 @@ public class CarHealth : MonoBehaviour, IHitable
     [SerializeField] private GameObject[] _disableObject;
     [SerializeField] private float _enableFireDelay;
 
+    private bool _isExplouse = false;
+
     public void ApplyDamage(float damage)
     {
         if (damage < 0)
@@ -39,6 +41,11 @@ public class CarHealth : MonoBehaviour, IHitable
 
     private void Explouse()
     {
+        if(_isExplouse == true)
+        {
+            return;
+        }
+
         _carRigidbody.isKinematic = false;
         _firstLeftVehicle.isKinematic = false;
         _firstRightVehicle.isKinematic = false;
@@ -59,6 +66,7 @@ public class CarHealth : MonoBehaviour, IHitable
         _explouseianParticle.Play();
         StartCoroutine(DestroyWithDelay());
         StartCoroutine(EnableFireWithDelay());
+        _isExplouse = true;
     }
 
     private IEnumerator EnableFireWithDelay()

@@ -397,15 +397,15 @@ MonoBehaviour:
   _carMeshRenderer: {fileID: 2353994}
   _explouseionMaterial: {fileID: 2100000, guid: 71c3071c68050cb49afdbe588919598c, type: 2}
   _carExplouseVector: {x: 0, y: 1000, z: 0}
-  _rightVechicleExplouseForce: {x: 1000, y: 0, z: 0}
-  _leftVechicleExplouseForce: {x: -1000, y: 0, z: 0}
+  _rightVechicleExplouseForce: {x: 1000, y: 100, z: 0}
+  _leftVechicleExplouseForce: {x: -1000, y: 100, z: 0}
   _cooldownDestroy: 15
   _fireParticle: {fileID: 134152839865636029}
   _disableObject:
   - {fileID: 102536}
   - {fileID: 139350}
   - {fileID: 108520}
-  _enableFireDelay: 5
+  _enableFireDelay: 4
 --- !u!65 &4954119728491261556
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -881,7 +881,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392332486124086, guid: 78892530d39aaea41a7f4adc11f8c866, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4392332486124086, guid: 78892530d39aaea41a7f4adc11f8c866, type: 3}
       propertyPath: m_LocalScale.z
@@ -893,7 +893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392332486124086, guid: 78892530d39aaea41a7f4adc11f8c866, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4392332486124086, guid: 78892530d39aaea41a7f4adc11f8c866, type: 3}
       propertyPath: m_LocalPosition.z

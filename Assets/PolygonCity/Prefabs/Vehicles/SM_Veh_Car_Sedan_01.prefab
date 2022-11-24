@@ -905,7 +905,7 @@ MonoBehaviour:
   _seocndRifgtVehicle: {fileID: 8785274188024041038}
   _carMeshRenderer: {fileID: 2317488}
   _explouseionMaterial: {fileID: 2100000, guid: 71c3071c68050cb49afdbe588919598c, type: 2}
-  _carExplouseVector: {x: 0, y: 1000, z: 0}
+  _carExplouseVector: {x: 0, y: 500, z: 0}
   _rightVechicleExplouseForce: {x: 1000, y: 0, z: 0}
   _leftVechicleExplouseForce: {x: -1000, y: 0, z: 0}
   _cooldownDestroy: 15
@@ -977,7 +977,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4392332486124086, guid: 78892530d39aaea41a7f4adc11f8c866, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.69
       objectReference: {fileID: 0}
     - target: {fileID: 4392332486124086, guid: 78892530d39aaea41a7f4adc11f8c866, type: 3}
       propertyPath: m_LocalPosition.z
