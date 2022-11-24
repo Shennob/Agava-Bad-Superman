@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PeopleHealth : MonoBehaviour
+public class PeopleHealth : MonoBehaviour, IHitable
 {
     private const string IsDie = "IsDie";
 
