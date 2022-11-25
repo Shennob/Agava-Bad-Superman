@@ -10,9 +10,11 @@ public class PlayerEnergy : MonoBehaviour
     private float _currentEnergy;
     private float _timeRemaining;
     private bool _canRestoreEnergy = false;
+    private bool _isEmptyEnergy = false;
 
     public UnityAction<float, float> ChangeEnergy;
 
+    public bool IsEmptyEnergy => _isEmptyEnergy;
     public float CurrentEnergy => _currentEnergy;
 
     private void Start()
@@ -22,24 +24,31 @@ public class PlayerEnergy : MonoBehaviour
 
     private void Update()
     {
-        if (_canRestoreEnergy)
+        if (_canRestoreEnergy || _isEmptyEnergy == true)
         {
             RestoreEnergyPerTime();
-        }
+        }       
     }
 
     public void DecreaseEnergy(float value)
     {
         StopRestoreEnergy();
 
-        if (_currentEnergy > 0)
+        if (_currentEnergy > value)
         {
             _currentEnergy -= value;
+
+            if(_currentEnergy <= value)
+            {
+                EmptyEnergy();
+            }
         }
         else
         {
-            _currentEnergy = 0;
+            EmptyEnergy();
         }
+
+        ChangeEnergy?.Invoke(_currentEnergy, _maxEnergy);
     }
 
     public void StartRestoreEnergy()
@@ -50,6 +59,12 @@ public class PlayerEnergy : MonoBehaviour
     public void StopRestoreEnergy()
     {
         _canRestoreEnergy = false;
+    }
+
+    private void EmptyEnergy()
+    {
+        _currentEnergy = 0;
+        _isEmptyEnergy = true;
     }
 
     private void RestoreEnergyPerTime()
@@ -68,8 +83,11 @@ public class PlayerEnergy : MonoBehaviour
                 if (_currentEnergy >= _maxEnergy)
                 {
                     _currentEnergy = _maxEnergy;
+                    _isEmptyEnergy = false;
                     StopRestoreEnergy();
                 }
+
+                ChangeEnergy?.Invoke(_currentEnergy, _maxEnergy);
             }
         }
     }

@@ -8,7 +8,7 @@ public class EnergyView : MonoBehaviour
 
     private void Awake()
     {
-        _slider.value = 1;
+        _slider.value = _slider.maxValue;
     }
 
     private void OnEnable()

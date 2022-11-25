@@ -13,6 +13,7 @@ public class EyeLaser : MonoBehaviour
     [SerializeField] private float _energyCost = 5f;
     [SerializeField] private LayerMask _ignoreMask;
 
+    private Ray _ray;
     private bool _readyToShoot = false;
     private float _timeRemaining;
     private float _minTimeRemaining = 0.01f;
@@ -23,12 +24,7 @@ public class EyeLaser : MonoBehaviour
     void Update()
     {
         RotateToMouseDirection();
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            CreateLaser();
-        }
-
+        
         if (Input.GetMouseButton(1))
         {
             _readyToShoot = true;
@@ -39,7 +35,9 @@ public class EyeLaser : MonoBehaviour
             CreateRay();
         }
 
-        if (Input.GetMouseButtonUp(0) || Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(0) ||
+            Input.GetMouseButtonUp(1) ||
+            ContainsEnergy() == false)
         {
             DestroyLaser();
         }
@@ -49,7 +47,7 @@ public class EyeLaser : MonoBehaviour
     {
         _playerEnergy.StopRestoreEnergy();
 
-        if (_readyToShoot && _playerEnergy.CurrentEnergy >= _energyCost)
+        if (_readyToShoot && ContainsEnergy())
         {
             for (int i = 0; i < _firePoints.Length; i++)
             {
@@ -62,11 +60,9 @@ public class EyeLaser : MonoBehaviour
 
     private void CreateRay()
     {
-        if (_readyToShoot && _playerEnergy.CurrentEnergy >= _energyCost)
+        if (_readyToShoot && ContainsEnergy())
         {
             RaycastHit hit;
-            Ray ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-            _direction = ray.direction;
 
             if (_timeRemaining > _minTimeRemaining)
             {
@@ -74,7 +70,7 @@ public class EyeLaser : MonoBehaviour
             }
             else
             {
-                if (Physics.Raycast(ray.origin, _direction, out hit, _maxLength, ~_ignoreMask))
+                if (Physics.Raycast(_ray.origin, _direction, out hit, _maxLength, ~_ignoreMask))
                 {
                     if (hit.collider.TryGetComponent(out IHitable hitable))
                     {
@@ -86,8 +82,18 @@ public class EyeLaser : MonoBehaviour
                 _playerEnergy.DecreaseEnergy(_energyCost);
             }
 
-            _playerEnergy.StopRestoreEnergy();
+            if (_instances.Count == 0)
+            {
+                CreateLaser();
+            }
         }
+
+        _playerEnergy.StopRestoreEnergy();
+    }
+
+    private bool ContainsEnergy()
+    {
+        return _playerEnergy.CurrentEnergy >= _energyCost && _playerEnergy.IsEmptyEnergy == false;
     }
 
     private void DestroyLaser()
@@ -107,8 +113,8 @@ public class EyeLaser : MonoBehaviour
 
     private void RotateToMouseDirection()
     {
-        Ray ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-        _direction = ray.direction;
+        _ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        _direction = _ray.direction;
         _rotation = Quaternion.LookRotation(_direction);
         transform.rotation = _rotation;
     }
