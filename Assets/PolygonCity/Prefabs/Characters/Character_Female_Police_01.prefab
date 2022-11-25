@@ -2121,6 +2121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 20
   _animator: {fileID: 9595392}
+  _wantedPointsToAdd: 5
 --- !u!1 &167488
 GameObject:
   m_ObjectHideFlags: 0

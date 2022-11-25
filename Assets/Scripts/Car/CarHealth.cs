@@ -21,8 +21,15 @@ public class CarHealth : MonoBehaviour, IHitable
     [SerializeField] private ParticleSystem _fireParticle;
     [SerializeField] private GameObject[] _disableObject;
     [SerializeField] private float _enableFireDelay;
+    [SerializeField] private int _wantedPointsToAdd;
 
     private bool _isExplouse = false;
+    private WantedLevel _wantedLevel;
+
+    private void Awake()
+    {
+        _wantedLevel = FindObjectOfType<WantedLevel>();
+    }
 
     public void ApplyDamage(float damage)
     {
@@ -66,6 +73,7 @@ public class CarHealth : MonoBehaviour, IHitable
         _explouseianParticle.Play();
         StartCoroutine(DestroyWithDelay());
         StartCoroutine(EnableFireWithDelay());
+        AddWantedPoints();
         _isExplouse = true;
     }
 
@@ -85,5 +93,10 @@ public class CarHealth : MonoBehaviour, IHitable
     {
         yield return new WaitForSeconds(5f);
         Explouse();
+    }
+
+    public void AddWantedPoints()
+    {
+        _wantedLevel.AddPoints(_wantedPointsToAdd);
     }
 }

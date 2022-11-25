@@ -7,12 +7,15 @@ public class PeopleHealth : MonoBehaviour, IHitable
 
     [SerializeField] private float _maxHealth = 20f;
     [SerializeField] private Animator _animator;
+    [SerializeField] private int _wantedPointsToAdd;
 
     private float _currentHealth;
+    private WantedLevel _wantedLevel;
 
     private void Start()
     {
         _currentHealth = _maxHealth;
+        _wantedLevel = FindObjectOfType<WantedLevel>();
     }
 
     public void ApplyDamage(float damage)
@@ -29,7 +32,13 @@ public class PeopleHealth : MonoBehaviour, IHitable
             if (_currentHealth <= 0)
             {
                 _animator.SetBool(IsDie, true);
+                AddWantedPoints();
             }
         }
+    }
+
+    public void AddWantedPoints()
+    {
+        _wantedLevel.AddPoints(_wantedPointsToAdd);
     }
 }

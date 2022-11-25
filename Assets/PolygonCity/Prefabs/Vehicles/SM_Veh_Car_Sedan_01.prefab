@@ -915,6 +915,7 @@ MonoBehaviour:
   - {fileID: 110112}
   - {fileID: 116108}
   _enableFireDelay: 5
+  _wantedPointsToAdd: 10
 --- !u!65 &8292356964349828451
 BoxCollider:
   m_ObjectHideFlags: 0

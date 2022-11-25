@@ -717,6 +717,7 @@ MonoBehaviour:
   - {fileID: 157120}
   - {fileID: 120744}
   _enableFireDelay: 4
+  _wantedPointsToAdd: 10
 --- !u!54 &4479020678318844804
 Rigidbody:
   m_ObjectHideFlags: 0

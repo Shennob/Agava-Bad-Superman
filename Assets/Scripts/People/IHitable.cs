@@ -5,4 +5,6 @@ using UnityEngine;
 public interface IHitable
 {
     public void ApplyDamage(float damage);
+
+    public void AddWantedPoints();
 }
