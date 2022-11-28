@@ -14,30 +14,22 @@ public class EyeLaser : MonoBehaviour
     [SerializeField] private LayerMask _ignoreMask;
 
     private Ray _ray;
-    private bool _readyToShoot = false;
     private float _timeRemaining;
-    private float _minTimeRemaining = 0.01f;
+    private float _minTimeRemaining = 0.02f;
     private Vector3 _direction;
-    private Quaternion _rotation;
+    private Vector3 _offset = new Vector3(0.5f, 0.5f, 0);
     private List<GameObject> _instances = new List<GameObject>();
 
     void Update()
     {
         RotateToMouseDirection();
-        
-        if (Input.GetMouseButton(1))
-        {
-            _readyToShoot = true;
-        }
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(1))
         {
             CreateRay();
         }
 
-        if (Input.GetMouseButtonUp(0) ||
-            Input.GetMouseButtonUp(1) ||
-            ContainsEnergy() == false)
+        if (Input.GetMouseButtonUp(1) || ContainsEnergy() == false)
         {
             DestroyLaser();
         }
@@ -47,7 +39,7 @@ public class EyeLaser : MonoBehaviour
     {
         _playerEnergy.StopRestoreEnergy();
 
-        if (_readyToShoot && ContainsEnergy())
+        if (ContainsEnergy())
         {
             for (int i = 0; i < _firePoints.Length; i++)
             {
@@ -60,7 +52,7 @@ public class EyeLaser : MonoBehaviour
 
     private void CreateRay()
     {
-        if (_readyToShoot && ContainsEnergy())
+        if (ContainsEnergy())
         {
             RaycastHit hit;
 
@@ -76,6 +68,7 @@ public class EyeLaser : MonoBehaviour
                     {
                         hitable.ApplyDamage(_damage);
                     }
+                    Debug.Log(hit.transform.name);
                 }
 
                 _timeRemaining = _timePerHit;
@@ -106,16 +99,14 @@ public class EyeLaser : MonoBehaviour
             }
         }
 
-        _readyToShoot = false;
         _instances.Clear();
         _playerEnergy.StartRestoreEnergy();
     }
 
     private void RotateToMouseDirection()
     {
-        _ray = _camera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+        _ray = _camera.ViewportPointToRay(_offset);
         _direction = _ray.direction;
-        _rotation = Quaternion.LookRotation(_direction);
-        transform.rotation = _rotation;
+        transform.rotation = Quaternion.LookRotation(_direction);
     }
 }
