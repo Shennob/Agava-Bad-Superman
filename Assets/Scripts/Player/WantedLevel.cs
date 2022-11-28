@@ -10,7 +10,7 @@ public class WantedLevel : MonoBehaviour
     private int _currentWantedLevel;
     private int _previousWantedLevel;
 
-    public Action LevelChanged;
+    public Action<int> LevelChange;
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class WantedLevel : MonoBehaviour
 
         if(_currentWantedLevel > _previousWantedLevel)
         {
-            LevelChanged?.Invoke();
+            LevelChange?.Invoke(_currentWantedLevel);
             _previousWantedLevel = _currentWantedLevel;
         }        
     }
