@@ -1,7 +1,11 @@
+using BehaviorDesigner.Runtime;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Waypoint : MonoBehaviour
+namespace test
 {
+    public class Waypoint : MonoBehaviour
+    {
+    }
 }
