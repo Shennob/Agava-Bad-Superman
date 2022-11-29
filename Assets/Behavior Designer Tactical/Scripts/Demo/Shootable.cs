@@ -7,6 +7,7 @@ namespace BehaviorDesigner.Runtime.Tactical
     /// </summary>
     public class Shootable : MonoBehaviour, IAttackAgent
     {
+        [SerializeField] private Transform _position;
         // The bullet prefab to fire
         public GameObject bullet;
         // The furthest distance that the agent is able to attack from
@@ -60,7 +61,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// <param name="targetPosition">The position to attack.</param>
         public void Attack(Vector3 targetPosition)
         {
-            GameObject.Instantiate(bullet, transform.position, Quaternion.LookRotation(targetPosition - transform.position));
+            GameObject.Instantiate(bullet, _position.position, Quaternion.LookRotation(targetPosition - transform.position));
             lastAttackTime = Time.time;
         }
     }

@@ -10,6 +10,8 @@ public class WantedLevel : MonoBehaviour
     private int _currentWantedLevel;
     private int _previousWantedLevel;
 
+    public int CurrentWantedLevel => _currentWantedLevel;
+
     public Action<int> LevelChange;
 
     private void Awake()

@@ -1746,8 +1746,9 @@ GameObject:
   - component: {fileID: 3297260176316265212}
   - component: {fileID: 4418552501645160175}
   - component: {fileID: 1930384215674770816}
+  - component: {fileID: 746436841479977310}
   - component: {fileID: 1286812317}
-  - component: {fileID: 4291258564382328421}
+  - component: {fileID: 1825701961}
   m_Layer: 0
   m_Name: Character_BusinessMan_Shirt_01
   m_TagString: Untagged
@@ -1862,7 +1863,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f10ec4e1a870f4d8b5bf249a8e921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tree: {fileID: 4291258564382328421}
+  _canSeeTree: {fileID: 1825701961}
+--- !u!114 &746436841479977310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a8b045fbe0c0a44aa5d6203dad18d40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _walkState: {fileID: 1286812317}
+  _runAwayState: {fileID: 1825701961}
 --- !u!114 &1286812317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,14 +1885,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 153506}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8d7b55c7ecdb49a4a89fa5e6f9022861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startWhenEnabled: 1
   asynchronousLoad: 0
-  pauseWhenDisabled: 0
+  pauseWhenDisabled: 1
   restartWhenComplete: 1
   logTaskChanges: 0
   group: 9
@@ -1903,7 +1918,7 @@ MonoBehaviour:
       Version: 1.7.2
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
---- !u!114 &4291258564382328421
+--- !u!114 &1825701961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1917,21 +1932,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startWhenEnabled: 1
   asynchronousLoad: 0
-  pauseWhenDisabled: 0
-  restartWhenComplete: 0
+  pauseWhenDisabled: 1
+  restartWhenComplete: 1
   logTaskChanges: 0
-  group: 3
+  group: 12
   resetValuesOnRestart: 0
   externalBehavior: {fileID: 0}
   mBehaviorSource:
-    behaviorName: Flee
+    behaviorName: Can See Object
     behaviorDescription: 
     mTaskData:
       types: []
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(0,0)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(1.12002563,143.58194)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.Flee","NodeData":{"Offset":"(-140,100)"},"ID":2,"Name":"Flee","Instant":true,"SharedFloatfleedDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":25},"SharedFloatlookAheadDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":20},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true},"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1200},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedBoolstopOnTaskEnd":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true},"SharedBoolupdateRotation":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true}}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"Target","IsShared":true}]}'
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(10,0)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Selector","NodeData":{"Offset":"(1.2142334,138.75885)"},"ID":1,"Name":"Selector","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(-70,130)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"LowerPriority","Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.CanSeeObject","NodeData":{"Offset":"(-70,120.243919)"},"ID":3,"Name":"Can
+        See Object","Instant":true,"BooleanusePhysics2D":false,"SharedGameObjecttargetObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"FoundObject","IsShared":true},"SharedGameObjectListtargetObjects":{"Type":"BehaviorDesigner.Runtime.SharedGameObjectList","Name":"","List`1mValue":[]},"SharedStringtargetTag":{"Type":"BehaviorDesigner.Runtime.SharedString","Name":"Character","IsShared":true,"IsDynamic":true},"LayerMaskobjectLayerMask":1,"Int32maxCollisionCount":200,"LayerMaskignoreLayerMask":4,"SharedFloatfieldOfViewAngle":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":45},"SharedFloatviewDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":100},"SharedVector3offset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"},"SharedVector3targetOffset":{"Type":"BehaviorDesigner.Runtime.SharedVector3","Name":"","Vector3mValue":"(0,0,0)"},"SharedFloatangleOffset2D":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0},"SharedBooluseTargetBone":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"HumanBodyBonestargetBone":"Hips","SharedBooldrawDebugRay":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBooldisableAgentColliderLayer":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedGameObjectreturnedObject":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"FoundObject","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Movement.Flee","NodeData":{"Offset":"(70,120)"},"ID":4,"Name":"Flee","Instant":true,"SharedFloatfleedDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":25},"SharedFloatlookAheadDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":20},"SharedGameObjecttarget":{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"FoundObject","IsShared":true},"SharedFloatspeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":10},"SharedFloatangularSpeed":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":1200},"SharedFloatarriveDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"","SinglemValue":0.2},"SharedBoolstopOnTaskEnd":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":false},"SharedBoolupdateRotation":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":"","BooleanmValue":true}}]},{"Type":"BehaviorDesigner.Runtime.Tasks.Idle","NodeData":{"Offset":"(112.102112,142.55249)"},"ID":5,"Name":"Idle","Instant":true}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedGameObject","Name":"FoundObject","IsShared":true}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 

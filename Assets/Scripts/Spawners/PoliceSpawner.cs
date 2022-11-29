@@ -4,7 +4,7 @@ using UnityEngine;
 [System.Serializable]
 public class Wave
 {
-    public float TimeToSpawnPilice;
+    public float TimeToSpawnPolice;
 }
 
 public class PoliceSpawner : MonoBehaviour, ISpawner
@@ -56,7 +56,7 @@ public class PoliceSpawner : MonoBehaviour, ISpawner
     private void OnLevelChanged(int wantedLevel)
     {
         _containsWantedLevel = true;
-        _currentTimeToSpawn = _wantedWaves[wantedLevel - 1].TimeToSpawnPilice;
+        _currentTimeToSpawn = _wantedWaves[wantedLevel - 1].TimeToSpawnPolice;
         _timeRemaining = _currentTimeToSpawn;
     }
 }
