@@ -10,7 +10,7 @@ public class CharacterPreview : MonoBehaviour
     private int _currentCharacter = 0;
     private int _previousCharacter;
 
-    public event UnityAction<string> CharacterChange;
+    public event UnityAction<CharacterInfo> CharacterChange;
 
     private void Start()
     {
@@ -52,6 +52,6 @@ public class CharacterPreview : MonoBehaviour
         _currentCharacter = index;
         _previousCharacter = _currentCharacter;
         _characters[index].gameObject.SetActive(true);
-        CharacterChange?.Invoke(_characters[index].Name);
+        CharacterChange?.Invoke(_characters[index]);
     }
 }

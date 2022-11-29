@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CharacterView : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _nameText;
     [SerializeField] private CharacterPreview _characterPreview;
+    [SerializeField] private TMP_Text _nameText;
+    [SerializeField] private TMP_Text _priceText;
+    [SerializeField] private Button _buyButton;
+    [SerializeField] private Button _equipButton;
 
     private void OnEnable()
     {
@@ -18,8 +22,25 @@ public class CharacterView : MonoBehaviour
         _characterPreview.CharacterChange -= OnCharacterChanged;
     }
 
-    private void OnCharacterChanged(string name)
+    private void OnCharacterChanged(CharacterInfo characterInfo)
     {
-        _nameText.text = name.ToString();
+        Render(characterInfo);
+    }
+
+    private void Render(CharacterInfo characterInfo)
+    {
+        _nameText.text = characterInfo.Name;
+        _buyButton.gameObject.SetActive(false);
+        _equipButton.gameObject.SetActive(false);
+
+        if (characterInfo.IsBuyed == false)
+        {
+            _buyButton.gameObject.SetActive(true);
+            _priceText.text = characterInfo.Price.ToString();
+        }
+        else
+        {
+            _equipButton.gameObject.SetActive(true);
+        }
     }
 }
