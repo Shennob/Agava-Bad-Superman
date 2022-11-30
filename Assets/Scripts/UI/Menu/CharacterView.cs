@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class CharacterView : MonoBehaviour
 {
-    [SerializeField] private CharacterPreview _characterPreview;
+    [SerializeField] private Store _characterPreview;
     [SerializeField] private TMP_Text _nameText;
     [SerializeField] private TMP_Text _priceText;
     [SerializeField] private Button _buyButton;
@@ -22,12 +22,12 @@ public class CharacterView : MonoBehaviour
         _characterPreview.CharacterChange -= OnCharacterChanged;
     }
 
-    private void OnCharacterChanged(CharacterInfo characterInfo)
+    private void OnCharacterChanged(CharacterInfo characterInfo, bool canBuy)
     {
-        Render(characterInfo);
+        Render(characterInfo, canBuy);
     }
 
-    private void Render(CharacterInfo characterInfo)
+    private void Render(CharacterInfo characterInfo, bool canBuy)
     {
         _nameText.text = characterInfo.Name;
         _buyButton.gameObject.SetActive(false);
@@ -36,6 +36,7 @@ public class CharacterView : MonoBehaviour
         if (characterInfo.IsBuyed == false)
         {
             _buyButton.gameObject.SetActive(true);
+            _buyButton.interactable = canBuy;
             _priceText.text = characterInfo.Price.ToString();
         }
         else
