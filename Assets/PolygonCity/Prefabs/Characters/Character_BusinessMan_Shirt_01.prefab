@@ -1749,6 +1749,7 @@ GameObject:
   - component: {fileID: 746436841479977310}
   - component: {fileID: 1286812317}
   - component: {fileID: 1825701961}
+  - component: {fileID: -7695273714098306919}
   m_Layer: 3
   m_Name: Character_BusinessMan_Shirt_01
   m_TagString: Untagged
@@ -1794,7 +1795,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 81224f6bbd8856945be577f523919866, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1829,6 +1830,8 @@ MonoBehaviour:
   _maxHealth: 20
   _animator: {fileID: 9509074}
   _wantedPointsToAdd: 5
+  _navMeshAgent: {fileID: 4418552501645160175}
+  _lootNote: {fileID: -7695273714098306919}
 --- !u!195 &4418552501645160175
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1959,6 +1962,20 @@ MonoBehaviour:
       Version: 1.7.2
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &-7695273714098306919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341fbf59da89f664fabfc5ef7818457e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loots:
+  - {fileID: 9048027005771782213, guid: 87f26733570da7c4bbd29b7786df1a37, type: 3}
 --- !u!1 &156172
 GameObject:
   m_ObjectHideFlags: 0

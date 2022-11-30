@@ -2103,6 +2103,7 @@ GameObject:
   - component: {fileID: 2559087388200581745}
   - component: {fileID: 3100413857332601462}
   - component: {fileID: -221556958675196548}
+  - component: {fileID: 2570025726405548736}
   m_Layer: 3
   m_Name: Character_BusinessWoman_01
   m_TagString: Untagged
@@ -2148,7 +2149,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 81224f6bbd8856945be577f523919866, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -2183,6 +2184,8 @@ MonoBehaviour:
   _maxHealth: 20
   _animator: {fileID: 9526412}
   _wantedPointsToAdd: 5
+  _navMeshAgent: {fileID: 2006798519931714572}
+  _lootNote: {fileID: 2570025726405548736}
 --- !u!195 &2006798519931714572
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2316,6 +2319,20 @@ MonoBehaviour:
       Version: 1.7.2
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
+--- !u!114 &2570025726405548736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341fbf59da89f664fabfc5ef7818457e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loots:
+  - {fileID: 9048027005771782213, guid: 87f26733570da7c4bbd29b7786df1a37, type: 3}
 --- !u!1 &185210
 GameObject:
   m_ObjectHideFlags: 0
