@@ -2194,6 +2194,7 @@ GameObject:
   - component: {fileID: -3580613768097206563}
   - component: {fileID: -8137375928368335531}
   - component: {fileID: 2735647503389490621}
+  - component: {fileID: -4522127653564425577}
   m_Layer: 3
   m_Name: Character_Male_Jacket_01
   m_TagString: Untagged
@@ -2274,6 +2275,8 @@ MonoBehaviour:
   _maxHealth: 20
   _animator: {fileID: 9557904}
   _wantedPointsToAdd: 5
+  _navMeshAgent: {fileID: 1927345261539762751}
+  _lootNote: {fileID: -4522127653564425577}
 --- !u!195 &1927345261539762751
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2334,8 +2337,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.2
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!114 &-3580613768097206563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2405,8 +2408,22 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.2
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
+--- !u!114 &-4522127653564425577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 341fbf59da89f664fabfc5ef7818457e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _loots:
+  - {fileID: 9048027005771782213, guid: 87f26733570da7c4bbd29b7786df1a37, type: 3}
 --- !u!1 &187746
 GameObject:
   m_ObjectHideFlags: 0

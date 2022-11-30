@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PeopleHealth : MonoBehaviour, IHitable
 {
@@ -9,6 +10,8 @@ public class PeopleHealth : MonoBehaviour, IHitable
     [SerializeField] private float _maxHealth = 20f;
     [SerializeField] private Animator _animator;
     [SerializeField] private int _wantedPointsToAdd;
+    [SerializeField] private NavMeshAgent _navMeshAgent;
+    [SerializeField] private LootNote _lootNote;
 
     private float _currentHealth;
     private WantedLevel _wantedLevel;
@@ -19,16 +22,15 @@ public class PeopleHealth : MonoBehaviour, IHitable
         _currentHealth = _maxHealth;
         _wantedLevel = FindObjectOfType<WantedLevel>();
         _humanSpawner = FindObjectOfType<HumanSpawner>();
+        _navMeshAgent.isStopped = false;
     }
 
     public void ApplyDamage(float damage)
     {
-
         if (damage < 0)
         {
             throw new ArgumentOutOfRangeException("Damage can't be negative");
         }
-
 
         if (_currentHealth > 0f)
         {
@@ -36,8 +38,10 @@ public class PeopleHealth : MonoBehaviour, IHitable
 
             if (_currentHealth <= 0)
             {
-                _animator.SetBool(IsDie, true);
+                _navMeshAgent.isStopped = true;
+                _animator.SetBool(IsDie, true);             
                 AddWantedPoints();
+                _lootNote.DroopLoot();
                 StartCoroutine(DestroyWithDelay());
             }
         }
