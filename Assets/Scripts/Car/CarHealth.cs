@@ -22,6 +22,7 @@ public class CarHealth : MonoBehaviour, IHitable
     [SerializeField] private GameObject[] _disableObject;
     [SerializeField] private float _enableFireDelay;
     [SerializeField] private int _wantedPointsToAdd;
+    [SerializeField] private SplineSeter _splineSeter;
 
     private bool _isExplouse = false;
     private WantedLevel _wantedLevel;
@@ -74,6 +75,7 @@ public class CarHealth : MonoBehaviour, IHitable
         StartCoroutine(DestroyWithDelay());
         StartCoroutine(EnableFireWithDelay());
         AddWantedPoints();
+        _splineSeter.StopMovement();
         _isExplouse = true;
     }
 
