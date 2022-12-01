@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class WantedLevel : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class WantedLevel : MonoBehaviour
     [SerializeField] private float _cooldownForOneStar;
     [SerializeField] private float _cooldownTwoStar;
     [SerializeField] private float _cooldownForThreeStar;
+    [SerializeField] private float _cooldownForFourStars;
+    [SerializeField] private float _cooldownForFiveStars;
 
     private int _wantedPoints;
     private int _currentWantedLevel;
@@ -40,9 +43,18 @@ public class WantedLevel : MonoBehaviour
 
         if(_currentTime >= _timeToDisableStar)
         {
-            _currentWantedLevel = 0;
+  
             DecreaseLevel?.Invoke(_currentWantedLevel);
-            DisableStars();
+
+            if(_currentWantedLevel > 1)
+            {
+                DestroyOneStar();
+            }
+            else
+            {
+                _currentWantedLevel = 0;
+                DisableStars();
+            }          
         }
     }
 
@@ -84,9 +96,12 @@ public class WantedLevel : MonoBehaviour
 
     public void SetWantedLevel(int level)
     {
-        _currentWantedLevel = level;
+        if(_currentWantedLevel > 0)
+        {
+            DisableStars();
+        }
 
-        DisableStars();
+        _currentWantedLevel = level;
 
         for (int i = 0; i < _currentWantedLevel; i++)
         {
@@ -107,6 +122,16 @@ public class WantedLevel : MonoBehaviour
         else if(_currentWantedLevel == 3)
         {
             _timeToDisableStar = Time.time + _cooldownForThreeStar;
+            _isTimerStart = true;
+        }
+        else if(_currentWantedLevel == 4)
+        {
+            _timeToDisableStar = Time.time + _cooldownForFourStars;
+            _isTimerStart = true;
+        }
+        else if(_currentWantedLevel == 5)
+        {
+            _timeToDisableStar = Time.time + _cooldownForFiveStars;
             _isTimerStart = true;
         }
     }
@@ -133,5 +158,40 @@ public class WantedLevel : MonoBehaviour
         {
             SetWantedLevel(5);
         }
+    }
+
+    private void DestroyOneStar()
+    {
+        var stars = _starPanel.GetComponentsInChildren<Transform>();
+        var star = stars[^1];
+        _currentWantedLevel--;
+
+        if (_currentWantedLevel == 1)
+        {
+            _timeToDisableStar = Time.time + _cooldownForOneStar;
+            _isTimerStart = true;
+        }
+        else if (_currentWantedLevel == 2)
+        {
+            _timeToDisableStar = Time.time + _cooldownTwoStar;
+            _isTimerStart = true;
+        }
+        else if (_currentWantedLevel == 3)
+        {
+            _timeToDisableStar = Time.time + _cooldownForThreeStar;
+            _isTimerStart = true;
+        }
+        else if (_currentWantedLevel == 4)
+        {
+            _timeToDisableStar = Time.time + _cooldownForFourStars;
+            _isTimerStart = true;
+        }
+        else if (_currentWantedLevel == 5)
+        {
+            _timeToDisableStar = Time.time + _cooldownForFiveStars;
+            _isTimerStart = true;
+        }
+
+        Destroy(star.gameObject);
     }
 }
