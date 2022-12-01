@@ -7,6 +7,15 @@ public class PlayerHit : MonoBehaviour
     private const string Punch = "IsPunch";
 
     [SerializeField] private Animator _animator;
+    [SerializeField] private CapsuleCollider[] _enabledColliders;
+
+    private void Awake()
+    {
+        foreach (var collider in _enabledColliders)
+        {
+            collider.enabled = false;
+        }
+    }
 
     private void Update()
     {
@@ -20,12 +29,24 @@ public class PlayerHit : MonoBehaviour
     private void Hit()
     {
         _animator.SetBool(Punch, true);
+
+        foreach(var collider in _enabledColliders)
+        {
+            collider.enabled = true;
+        }
+
         StartCoroutine(DissableWithDelay());
     }
 
     private IEnumerator DissableWithDelay()
     {
         yield return new WaitForSeconds(_animator.GetCurrentAnimatorClipInfo(0).Length);
+
+        foreach (var collider in _enabledColliders)
+        {
+            collider.enabled = false;
+        }
+
         _animator.SetBool(Punch, false);
     }
 }
