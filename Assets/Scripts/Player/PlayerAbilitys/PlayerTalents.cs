@@ -20,7 +20,7 @@ public class PlayerTalents : MonoBehaviour
     private void Start()
     {
         var jumpAbility = _characterLocomotion.GetAbility<Jump>();
-        jumpAbility.Force += 100;
+        //jumpAbility.Force += 100;
     }
 
     public void IncreaseHealth()
