@@ -9,12 +9,8 @@ public class PlayerHit : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private CapsuleCollider[] _enabledColliders;
 
-    private WantedLevel _wantedLevel;
-
     private void Awake()
     {
-        _wantedLevel = FindObjectOfType<WantedLevel>();
-
         foreach (var collider in _enabledColliders)
         {
             collider.enabled = false;
