@@ -6,10 +6,16 @@ public class WantedLevel : MonoBehaviour
     [SerializeField] private int _pointToOneLevel;
     [SerializeField] private int _maxWantedLevel;
     [SerializeField] private GameObject _starPanel;
+    [SerializeField] private float _cooldownForOneStar;
+    [SerializeField] private float _cooldownTwoStar;
+    [SerializeField] private float _cooldownForThreeStar;
 
     private int _wantedPoints;
     private int _currentWantedLevel;
     private int _previousWantedLevel;
+    private bool _isTimerStart = false;
+    private float _currentTime;
+    private float _timeToDisableStar;
 
     public int CurrentWantedLevel => _currentWantedLevel;
 
@@ -18,6 +24,33 @@ public class WantedLevel : MonoBehaviour
     private void Awake()
     {
         ResetWantedLevel();
+    }
+
+    private void Update()
+    {
+        if(_isTimerStart == false)
+        {
+            return;
+        }
+
+        _currentTime += Time.deltaTime;
+
+        if(_currentTime >= _timeToDisableStar)
+        {
+            _currentWantedLevel = 0;
+            var stars = _starPanel.GetComponentInChildren<Transform>();
+
+            foreach (Transform star in stars)
+            {
+                Destroy(star.gameObject);
+            }
+
+            for (int i = 0; i < _currentWantedLevel; i++)
+            {
+                LevelChange?.Invoke(_currentWantedLevel);
+                _previousWantedLevel = _currentWantedLevel;
+            }
+        }
     }
 
     public void AddPoints(int value)
@@ -58,5 +91,37 @@ public class WantedLevel : MonoBehaviour
         {
             Destroy(star.gameObject);
         }
+    }
+
+    public void SetWantedLevel(int level)
+    {
+        _currentWantedLevel = level;
+        var stars = _starPanel.GetComponentInChildren<Transform>();
+
+        foreach (Transform star in stars)
+        {
+            Destroy(star.gameObject);
+        }
+
+        for (int i = 0; i < _currentWantedLevel; i++)
+        {
+            LevelChange?.Invoke(_currentWantedLevel);
+            _previousWantedLevel = _currentWantedLevel;
+        }
+
+        if(_currentWantedLevel == 1)
+        {
+            _timeToDisableStar = Time.time + _cooldownForOneStar;
+        }
+        else if(_currentWantedLevel == 2)
+        {
+            _timeToDisableStar = Time.time + _cooldownTwoStar;
+        }
+        else if(_currentWantedLevel == 3)
+        {
+            _timeToDisableStar = Time.time + _cooldownForThreeStar;
+        }
+
+        _isTimerStart = true;
     }
 }
