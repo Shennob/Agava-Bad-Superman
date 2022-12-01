@@ -15,7 +15,7 @@ public class PunchColider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.TryGetComponent(out PeopleHealth peopleHealth))
+        if(other.gameObject.TryGetComponent(out PeopleHealth peopleHealth) )
         {
             if(_wantedLevel.CurrentWantedLevel < 1)
             {
@@ -23,6 +23,15 @@ public class PunchColider : MonoBehaviour
             }
           
             peopleHealth.ApplyDamage(_damage);
+        }
+        else if(other.gameObject.TryGetComponent(out CarHealth carHealth))
+        {
+            if (_wantedLevel.CurrentWantedLevel < 1)
+            {
+                _wantedLevel.SetWantedLevel(1);
+            }
+
+            carHealth.ApplyDamage(_damage);
         }
     }
 }

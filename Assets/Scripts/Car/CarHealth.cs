@@ -23,6 +23,7 @@ public class CarHealth : MonoBehaviour, IHitable
     [SerializeField] private float _enableFireDelay;
     [SerializeField] private int _wantedPointsToAdd;
     [SerializeField] private SplineSeter _splineSeter;
+    [SerializeField] private PoliceCar _policeCar;
 
     private bool _isExplouse = false;
     private int _expirienceValue = 50;
@@ -80,6 +81,12 @@ public class CarHealth : MonoBehaviour, IHitable
         AddWantedPoints();
         AddExpirience();
         _splineSeter.StopMovement();
+
+        if(_policeCar != null)
+        {
+            _policeCar.DestroyCar();
+        }
+
         _isExplouse = true;
     }
 
@@ -103,7 +110,14 @@ public class CarHealth : MonoBehaviour, IHitable
 
     public void AddWantedPoints()
     {
-        _wantedLevel.AddPoints(_wantedPointsToAdd);
+        if (_wantedLevel.CurrentWantedLevel > 2)
+        {
+            _wantedLevel.AddPoints(_wantedPointsToAdd);
+        }
+        else
+        {
+            _wantedLevel.SetWantedLevel(2);
+        }
     }
 
     public void AddExpirience()

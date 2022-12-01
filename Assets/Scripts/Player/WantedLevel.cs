@@ -17,6 +17,7 @@ public class WantedLevel : MonoBehaviour
     private bool _isTimerStart = false;
     private float _currentTime;
     private float _timeToDisableStar;
+    private int _destroyedCar;
 
     public int CurrentWantedLevel => _currentWantedLevel;
 
@@ -40,6 +41,7 @@ public class WantedLevel : MonoBehaviour
         if(_currentTime >= _timeToDisableStar)
         {
             _currentWantedLevel = 0;
+            DecreaseLevel?.Invoke(_currentWantedLevel);
             DisableStars();
         }
     }
@@ -76,6 +78,7 @@ public class WantedLevel : MonoBehaviour
         _wantedPoints = 0;
         _currentWantedLevel = 0;
         _previousWantedLevel = 0;
+        _destroyedCar = 0;
         DisableStars();
     }
 
@@ -94,17 +97,18 @@ public class WantedLevel : MonoBehaviour
         if(_currentWantedLevel == 1)
         {
             _timeToDisableStar = Time.time + _cooldownForOneStar;
+            _isTimerStart = true;
         }
         else if(_currentWantedLevel == 2)
         {
             _timeToDisableStar = Time.time + _cooldownTwoStar;
+            _isTimerStart = true;
         }
         else if(_currentWantedLevel == 3)
         {
             _timeToDisableStar = Time.time + _cooldownForThreeStar;
+            _isTimerStart = true;
         }
-
-        _isTimerStart = true;
     }
 
     private void DisableStars()
@@ -114,6 +118,20 @@ public class WantedLevel : MonoBehaviour
         foreach (Transform star in stars)
         {
             Destroy(star.gameObject);
+        }
+    }
+
+    public void UpDestroyedCar()
+    {
+        _destroyedCar++;
+
+        if(_destroyedCar == 1)
+        {
+            SetWantedLevel(4);
+        }
+        else if(_destroyedCar == 3)
+        {
+            SetWantedLevel(5);
         }
     }
 }

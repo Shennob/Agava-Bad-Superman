@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 4352164227493258381}
   - component: {fileID: 1197869095798885628}
   - component: {fileID: -4519491565650309448}
+  - component: {fileID: 2829315508679596380}
   m_Layer: 3
   m_Name: Character_Female_Jacket_01
   m_TagString: Untagged
@@ -296,7 +297,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Root'\n\tTransform 'IndexFinger_02'\n\tTransform
+    'Elbow_R'\n\tTransform 'Finger_02'\n\tTransform 'Finger_03'\n\tTransform 'Ball_L'\n\tTransform
+    'Thumb_02'\n\tTransform 'Ball_R'\n\tTransform 'Clavicle_L'\n\tTransform 'Finger_01'\n\tand
+    more ...\n\tFrom animation clip 'mixamo.com'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -404,7 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f10ec4e1a870f4d8b5bf249a8e921f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _canSeeTree: {fileID: 1197869095798885628}
+  _followTree: {fileID: 0}
 --- !u!114 &4352164227493258381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,6 +483,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loots:
   - {fileID: 9048027005771782213, guid: 87f26733570da7c4bbd29b7786df1a37, type: 3}
+--- !u!114 &2829315508679596380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107314}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42efe16ce64c2ff4683ba76bfe850fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canSeeTree: {fileID: 1197869095798885628}
 --- !u!1 &107650
 GameObject:
   m_ObjectHideFlags: 0

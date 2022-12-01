@@ -554,7 +554,7 @@ MonoBehaviour:
   - {fileID: 169676}
   _enableFireDelay: 4
   _wantedPointsToAdd: 10
-  _splineSeter: {fileID: 0}
+  _splineSeter: {fileID: 1982032461966785075}
 --- !u!54 &6758654298273702410
 Rigidbody:
   m_ObjectHideFlags: 0
