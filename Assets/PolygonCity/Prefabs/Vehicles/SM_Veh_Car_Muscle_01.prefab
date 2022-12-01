@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 434452}
   - component: {fileID: 3323882}
   - component: {fileID: 2312058}
+  - component: {fileID: 2381553347038536842}
   - component: {fileID: 135686275664355110}
   - component: {fileID: 213821206878395601}
   m_Layer: 0
@@ -85,6 +86,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2381553347038536842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 123088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135686275664355110
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -327,6 +340,7 @@ MonoBehaviour:
   _enableFireDelay: 5
   _wantedPointsToAdd: 10
   _splineSeter: {fileID: 5578098958441187069}
+  _policeCar: {fileID: 0}
 --- !u!54 &8173980912841201435
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1133,7 +1147,7 @@ MonoBehaviour:
   autoStartPosition: 1
   _follow: 1
   preserveUniformSpeedWithOffset: 0
-  _followSpeed: 10
+  _followSpeed: 14
   _followDuration: 1
   _startPosition: 0
   _speedModifier:
@@ -1156,6 +1170,7 @@ GameObject:
   - component: {fileID: 469928}
   - component: {fileID: 3394820}
   - component: {fileID: 2309912}
+  - component: {fileID: 7692455603887434430}
   - component: {fileID: 135090109406814138}
   - component: {fileID: 2368721804009716184}
   m_Layer: 0
@@ -1230,6 +1245,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7692455603887434430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135090109406814138
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1270,6 +1297,7 @@ GameObject:
   - component: {fileID: 402862}
   - component: {fileID: 3313690}
   - component: {fileID: 2358478}
+  - component: {fileID: 5602604462533413263}
   - component: {fileID: 135290294576182284}
   - component: {fileID: 7094655958810713070}
   m_Layer: 0
@@ -1344,6 +1372,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &5602604462533413263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135290294576182284
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1384,6 +1424,7 @@ GameObject:
   - component: {fileID: 485822}
   - component: {fileID: 3382168}
   - component: {fileID: 2339652}
+  - component: {fileID: 6974275549411858830}
   - component: {fileID: 135891695195543874}
   - component: {fileID: 6586276488451108923}
   m_Layer: 0
@@ -1458,6 +1499,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6974275549411858830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 171134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135891695195543874
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -41,9 +41,13 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
                 SetDestination(targetPosition);
                 lastTargetPosition = targetPosition;
                 hasMoved = true;
+                Animator animator = gameObject.GetComponent<Animator>();
+                animator.SetBool("IsIdle", false);
             } else {
                 // Stop moving if the agent is within the moveDistance of the target.
                 if (hasMoved && (targetPosition - transform.position).magnitude < moveDistance.Value) {
+                   Animator animator =  gameObject.GetComponent<Animator>();
+                    animator.SetBool("IsIdle", true);
                     Stop();
                     hasMoved = false;
                     lastTargetPosition = targetPosition;

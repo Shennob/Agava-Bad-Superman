@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 469864}
   - component: {fileID: 3331630}
   - component: {fileID: 2377250}
+  - component: {fileID: 1956221348125294660}
   - component: {fileID: 6636976620380112407}
   - component: {fileID: 8344358359835323297}
   m_Layer: 0
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111294}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.76908106, y: 0.41863042, z: 1.5001032}
+  m_LocalPosition: {x: 0.7690817, y: 0.4186306, z: 1.500104}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,6 +86,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1956221348125294660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &6636976620380112407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,6 +138,7 @@ GameObject:
   - component: {fileID: 410608}
   - component: {fileID: 3307674}
   - component: {fileID: 2316170}
+  - component: {fileID: 6947796705922827572}
   - component: {fileID: 8336471675658117405}
   - component: {fileID: 6137239219164740288}
   m_Layer: 0
@@ -199,6 +213,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &6947796705922827572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &8336471675658117405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -322,6 +348,7 @@ GameObject:
   - component: {fileID: 412088}
   - component: {fileID: 3350984}
   - component: {fileID: 2349334}
+  - component: {fileID: 3290450074908739092}
   - component: {fileID: 2888353795906198514}
   - component: {fileID: 878959955345576803}
   m_Layer: 0
@@ -396,6 +423,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3290450074908739092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 134320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &2888353795906198514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -555,6 +594,7 @@ MonoBehaviour:
   _enableFireDelay: 4
   _wantedPointsToAdd: 10
   _splineSeter: {fileID: 1982032461966785075}
+  _policeCar: {fileID: 0}
 --- !u!54 &6758654298273702410
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1348,7 +1388,7 @@ MonoBehaviour:
   autoStartPosition: 1
   _follow: 1
   preserveUniformSpeedWithOffset: 0
-  _followSpeed: 10
+  _followSpeed: 14
   _followDuration: 1
   _startPosition: 0
   _speedModifier:
@@ -1550,6 +1590,7 @@ GameObject:
   - component: {fileID: 414136}
   - component: {fileID: 3334790}
   - component: {fileID: 2321010}
+  - component: {fileID: 3503443437104972809}
   - component: {fileID: 977514966672625653}
   - component: {fileID: 4382964712733936055}
   m_Layer: 0
@@ -1624,6 +1665,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3503443437104972809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &977514966672625653
 Rigidbody:
   m_ObjectHideFlags: 0

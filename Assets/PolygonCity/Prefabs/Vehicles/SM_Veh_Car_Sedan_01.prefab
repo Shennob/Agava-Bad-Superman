@@ -178,6 +178,7 @@ GameObject:
   - component: {fileID: 3398108}
   - component: {fileID: 2323160}
   - component: {fileID: 7764821917236329190}
+  - component: {fileID: 4140546983180243603}
   - component: {fileID: 7590711479759093705}
   m_Layer: 0
   m_Name: SM_Veh_Car_Sedan_Wheel_rr
@@ -267,6 +268,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4140546983180243603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &7590711479759093705
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -292,6 +305,7 @@ GameObject:
   - component: {fileID: 3325342}
   - component: {fileID: 2398922}
   - component: {fileID: 8617777934290095828}
+  - component: {fileID: 4170257022883222971}
   - component: {fileID: 996092078375641525}
   m_Layer: 0
   m_Name: SM_Veh_Car_Sedan_Wheel_fr
@@ -381,6 +395,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4170257022883222971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &996092078375641525
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -406,6 +432,7 @@ GameObject:
   - component: {fileID: 3388320}
   - component: {fileID: 2393980}
   - component: {fileID: 8785274188024041038}
+  - component: {fileID: 8236741038014251644}
   - component: {fileID: 7910836011708288131}
   m_Layer: 0
   m_Name: SM_Veh_Car_Sedan_Wheel_rl
@@ -495,6 +522,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8236741038014251644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 170826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &7910836011708288131
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -520,6 +559,7 @@ GameObject:
   - component: {fileID: 3305302}
   - component: {fileID: 2392736}
   - component: {fileID: 970337234531702840}
+  - component: {fileID: 2594139818431944093}
   - component: {fileID: 6584608223323022430}
   m_Layer: 0
   m_Name: SM_Veh_Car_Sedan_Wheel_fl
@@ -609,6 +649,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2594139818431944093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &6584608223323022430
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -919,6 +971,7 @@ MonoBehaviour:
   _enableFireDelay: 5
   _wantedPointsToAdd: 10
   _splineSeter: {fileID: 2887994202908230644}
+  _policeCar: {fileID: 0}
 --- !u!65 &8292356964349828451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1725,7 +1778,7 @@ MonoBehaviour:
   autoStartPosition: 1
   _follow: 1
   preserveUniformSpeedWithOffset: 0
-  _followSpeed: 10
+  _followSpeed: 14
   _followDuration: 1
   _startPosition: 0
   _speedModifier:

@@ -25,7 +25,7 @@ public class PeopleHealth : MonoBehaviour, IHitable
         _wantedLevel = FindObjectOfType<WantedLevel>();
         _humanSpawner = FindObjectOfType<HumanSpawner>();
         _playerExperience = FindObjectOfType<PlayerExperience>();
-        _navMeshAgent.isStopped = false;
+        //_navMeshAgent.isStopped = false;
     }
 
     public void ApplyDamage(float damage)
