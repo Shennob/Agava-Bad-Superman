@@ -14,7 +14,9 @@ public class PeopleHealth : MonoBehaviour, IHitable
     [SerializeField] private LootNote _lootNote;
 
     private float _currentHealth;
+    private int _expirienceValue = 50;
     private WantedLevel _wantedLevel;
+    private PlayerExperience _playerExperience;
     private HumanSpawner _humanSpawner;
 
     private void Start()
@@ -22,6 +24,7 @@ public class PeopleHealth : MonoBehaviour, IHitable
         _currentHealth = _maxHealth;
         _wantedLevel = FindObjectOfType<WantedLevel>();
         _humanSpawner = FindObjectOfType<HumanSpawner>();
+        _playerExperience = FindObjectOfType<PlayerExperience>();
         _navMeshAgent.isStopped = false;
     }
 
@@ -39,8 +42,9 @@ public class PeopleHealth : MonoBehaviour, IHitable
             if (_currentHealth <= 0)
             {
                 _navMeshAgent.isStopped = true;
-                _animator.SetBool(IsDie, true);             
+                _animator.SetBool(IsDie, true);
                 AddWantedPoints();
+                AddExpirience();
                 _lootNote.DroopLoot();
                 StartCoroutine(DestroyWithDelay());
             }
@@ -57,5 +61,10 @@ public class PeopleHealth : MonoBehaviour, IHitable
         yield return new WaitForSeconds(3f);
         _humanSpawner.Spawn();
         Destroy(gameObject);
+    }
+
+    public void AddExpirience()
+    {
+        _playerExperience.AddExpirience(_expirienceValue);
     }
 }

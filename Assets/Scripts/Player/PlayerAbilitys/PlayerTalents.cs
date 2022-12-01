@@ -1,7 +1,5 @@
 using Opsive.UltimateCharacterController.Character;
 using Opsive.UltimateCharacterController.Character.Abilities;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerTalents : MonoBehaviour
@@ -14,38 +12,69 @@ public class PlayerTalents : MonoBehaviour
     private int _healthLevel = 1;
     private int _energyLevel = 1;
     private int _jumpLevel = 1;
+    private int _defaultLevel = 1;
+    private float _defaultHealth;
+    private float _defaultEnergy;
+    private float _defaultJumpForce;
     private float _increaseHealthValue = 10f;
     private float _increaseEnergyValue = 10f;
+    private float _increaseJumpValue = 0.5f;
+    private Jump _jumpAbility;
+
+    public int HealthLevel => _healthLevel;
+    public int EnergyLevel => _energyLevel;
+    public int JumpLevel => _jumpLevel;
+    public float MaxHealt => _playerHealth.MaxHealth;
+    public float MaxEnergy => _playerEnergy.MaxEnergy;
+    public float JumpForce => _jumpAbility.Force;
 
     private void Start()
     {
-        var jumpAbility = _characterLocomotion.GetAbility<Jump>();
-        //jumpAbility.Force += 100;
+        _jumpAbility = _characterLocomotion.GetAbility<Jump>();
+        _talentsHolder.gameObject.SetActive(false);
+        _defaultHealth = _playerHealth.MaxHealth;
+        _defaultEnergy = _playerEnergy.MaxEnergy;
+        _defaultJumpForce = _jumpAbility.Force;
     }
 
     public void IncreaseHealth()
     {
         _healthLevel++;
-        _playerHealth.SetMaxHealth(_increaseHealthValue);
+        _playerHealth.AddMaxHealth(_increaseHealthValue);
         HideTalentsPanel();
     }
 
     public void IncreaseEnergy()
     {
         _energyLevel++;
-        _playerEnergy.SetMaxEnergy(_increaseEnergyValue);
+        _playerEnergy.AddMaxEnergy(_increaseEnergyValue);
+        HideTalentsPanel();
+    }
+
+    public void IncreaseJump()
+    {
+        _jumpLevel++;
+        _jumpAbility.Force += _increaseJumpValue;
         HideTalentsPanel();
     }
 
     public void ShowTalentsPanel()
     {
-        Time.timeScale = 0;
         _talentsHolder.gameObject.SetActive(true);
+    }
+
+    public void ResetTalents()
+    {
+        _healthLevel = _defaultLevel;
+        _energyLevel = _defaultLevel;
+        _jumpLevel = _defaultLevel;
+        _playerHealth.ResetMaxHealth(_defaultHealth);
+        _playerEnergy.ResetMaxEnergy(_defaultEnergy);
+        _jumpAbility.Force = _defaultJumpForce;
     }
 
     private void HideTalentsPanel()
     {
-        Time.timeScale = 1;
         _talentsHolder.gameObject.SetActive(false);
     }
 }

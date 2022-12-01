@@ -1328,6 +1328,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3258140717164768532}
   - component: {fileID: 3258140717164768535}
+  - component: {fileID: 4329007219815238776}
   m_Layer: 5
   m_Name: TalentsHolder
   m_TagString: Untagged
@@ -1384,6 +1385,25 @@ MonoBehaviour:
   m_ChildScaleWidth: 1
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!114 &4329007219815238776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258140717164768533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0ba34bd671028947889390815cf3f42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthLevelText: {fileID: 3258140717779693978}
+  _energyLevelText: {fileID: 3258140717606672437}
+  _jumpLevelText: {fileID: 3258140716027368379}
+  _currentHealthText: {fileID: 3258140717039950504}
+  _currentEnergyText: {fileID: 3258140715973191618}
+  _currentJumpText: {fileID: 3258140716542054928}
+  _playerTalents: {fileID: 0}
 --- !u!1 &3258140717222169308
 GameObject:
   m_ObjectHideFlags: 0

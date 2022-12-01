@@ -16,6 +16,7 @@ public class PlayerEnergy : MonoBehaviour
 
     public bool IsEmptyEnergy => _isEmptyEnergy;
     public float CurrentEnergy => _currentEnergy;
+    public float MaxEnergy => _maxEnergy;
 
     private void Start()
     {
@@ -30,9 +31,14 @@ public class PlayerEnergy : MonoBehaviour
         }       
     }
 
-    public void SetMaxEnergy(float value)
+    public void AddMaxEnergy(float value)
     {
         _maxEnergy += value;
+    }
+
+    public void ResetMaxEnergy(float value)
+    {
+        _maxEnergy = value;
     }
 
     public void DecreaseEnergy(float value)

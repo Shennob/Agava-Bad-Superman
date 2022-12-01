@@ -7,4 +7,6 @@ public interface IHitable
     public void ApplyDamage(float damage);
 
     public void AddWantedPoints();
+
+    public void AddExpirience();
 }

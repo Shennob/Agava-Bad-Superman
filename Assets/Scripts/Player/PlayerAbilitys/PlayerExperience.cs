@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerExpirience : MonoBehaviour
+public class PlayerExperience : MonoBehaviour
 {
     [SerializeField] private int _currentLevel = 1;
     [SerializeField] private PlayerTalents _playerTalents;
