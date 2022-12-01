@@ -19,6 +19,8 @@ namespace BehaviorDesigner.Runtime.Tactical
 
         // The last time the agent attacked
         private float lastAttackTime;
+        private PlayerHealth _playerHealth;
+        private WantedLevel _wantedLevel;
 
         /// <summary>
         /// Initialize the default values.
@@ -26,6 +28,8 @@ namespace BehaviorDesigner.Runtime.Tactical
         private void Awake()
         {
             lastAttackTime = -repeatAttackDelay;
+            _playerHealth = FindObjectOfType<PlayerHealth>();
+            _wantedLevel = FindObjectOfType<WantedLevel>();
         }
 
         /// <summary>
@@ -60,6 +64,19 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// </summary>
         /// <param name="targetPosition">The position to attack.</param>
         public void Attack(Vector3 targetPosition)
+        {
+            if(_playerHealth.Health > 10 && _wantedLevel.CurrentWantedLevel == 2)
+            {
+                Shoot(targetPosition);
+            }
+            else if(_wantedLevel.CurrentWantedLevel > 2)
+            {
+                Shoot(targetPosition);
+            }
+           
+        }
+
+        private void Shoot(Vector3 targetPosition)
         {
             GameObject.Instantiate(bullet, _position.position, Quaternion.LookRotation(targetPosition - transform.position));
             lastAttackTime = Time.time;

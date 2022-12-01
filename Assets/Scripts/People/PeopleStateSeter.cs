@@ -20,11 +20,13 @@ public class PeopleStateSeter : MonoBehaviour
     private void OnEnable()
     {
         _wantedLevel.IncreaseLevel += OnLevelChanged;
+        _wantedLevel.DecreaseLevel += OnLevelChanged;
     }
 
     private void OnDisable()
     {
         _wantedLevel.IncreaseLevel -= OnLevelChanged;
+        _wantedLevel.DecreaseLevel -= OnLevelChanged;
     }
 
     private void OnLevelChanged(int obj)

@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class BehaviorTreePlayerSeter : MonoBehaviour
 {
-    [SerializeField] private BehaviorTree _canSeeTree;
+    [SerializeField] private BehaviorTree _followTree;
 
     private void Awake()
     {
         var player = FindObjectOfType<PlayerAnimations>().gameObject;
 
-        if(_canSeeTree != null)
+        if(_followTree != null)
         {
-            _canSeeTree.SetVariableValue("FoundObject", player);
+            _followTree.SetVariableValue("Target", player);
         }
     }
 

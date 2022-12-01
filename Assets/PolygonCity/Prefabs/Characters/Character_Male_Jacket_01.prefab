@@ -2191,10 +2191,10 @@ GameObject:
   - component: {fileID: 5252403531772404144}
   - component: {fileID: 1927345261539762751}
   - component: {fileID: 5668145099150236446}
-  - component: {fileID: -3580613768097206563}
   - component: {fileID: -8137375928368335531}
   - component: {fileID: 2735647503389490621}
   - component: {fileID: -4522127653564425577}
+  - component: {fileID: 5234090603294345508}
   m_Layer: 3
   m_Name: Character_Male_Jacket_01
   m_TagString: Untagged
@@ -2243,7 +2243,12 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: 
+  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
+    are already bound by a Humanoid avatar. These transforms can only be changed
+    by Humanoid clips.\n\tTransform 'Root'\n\tTransform 'IndexFinger_02'\n\tTransform
+    'Elbow_R'\n\tTransform 'Finger_02'\n\tTransform 'Finger_03'\n\tTransform 'Ball_L'\n\tTransform
+    'Thumb_02'\n\tTransform 'Ball_R'\n\tTransform 'Clavicle_L'\n\tTransform 'Finger_01'\n\tand
+    more ...\n\tFrom animation clip 'mixamo.com'"
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -2339,19 +2344,6 @@ MonoBehaviour:
       Version: 1.7.2
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1
---- !u!114 &-3580613768097206563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 183828}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f10ec4e1a870f4d8b5bf249a8e921f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _canSeeTree: {fileID: 2735647503389490621}
 --- !u!114 &-8137375928368335531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2424,6 +2416,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _loots:
   - {fileID: 9048027005771782213, guid: 87f26733570da7c4bbd29b7786df1a37, type: 3}
+--- !u!114 &5234090603294345508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42efe16ce64c2ff4683ba76bfe850fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _canSeeTree: {fileID: 2735647503389490621}
 --- !u!1 &187746
 GameObject:
   m_ObjectHideFlags: 0
