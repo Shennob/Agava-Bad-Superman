@@ -5,6 +5,7 @@ public class WantedLevel : MonoBehaviour
 {
     [SerializeField] private int _pointToOneLevel;
     [SerializeField] private int _maxWantedLevel;
+    [SerializeField] private GameObject _starPanel;
 
     private int _wantedPoints;
     private int _currentWantedLevel;
@@ -16,9 +17,7 @@ public class WantedLevel : MonoBehaviour
 
     private void Awake()
     {
-        _wantedPoints = 0;
-        _currentWantedLevel = 0;
-        _previousWantedLevel = 0;
+        ResetWantedLevel();
     }
 
     public void AddPoints(int value)
@@ -46,5 +45,18 @@ public class WantedLevel : MonoBehaviour
             LevelChange?.Invoke(_currentWantedLevel);
             _previousWantedLevel = _currentWantedLevel;
         }        
+    }
+
+    public void ResetWantedLevel()
+    {
+        _wantedPoints = 0;
+        _currentWantedLevel = 0;
+        _previousWantedLevel = 0;
+        var stars = _starPanel.GetComponentInChildren<Transform>();
+
+        foreach(Transform star in stars)
+        {
+            Destroy(star.gameObject);
+        }
     }
 }
