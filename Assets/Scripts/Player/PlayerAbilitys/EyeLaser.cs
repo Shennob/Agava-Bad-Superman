@@ -12,10 +12,10 @@ public class EyeLaser : MonoBehaviour
     [SerializeField] private PlayerEnergy _playerEnergy;
     [SerializeField] private float _energyCost = 5f;
     [SerializeField] private LayerMask _ignoreMask;
+    [SerializeField] private ParticleSystem _decalParticle;
 
     private Ray _ray;
     private float _timeRemaining;
-    private float _minTimeRemaining = 0.02f;
     private Vector3 _direction;
     private Vector3 _offset = new Vector3(0.5f, 0.5f, 0);
     private List<GameObject> _instances = new List<GameObject>();
@@ -56,7 +56,18 @@ public class EyeLaser : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (_timeRemaining > _minTimeRemaining)
+            if (Physics.Raycast(_ray.origin, _direction, out hit, _maxLength, ~_ignoreMask))
+            {              
+                Debug.Log(hit.transform.name);
+
+                if (hit.transform.tag == "Dirt")
+                {
+                    Instantiate(_decalParticle, hit.point,
+                        Quaternion.LookRotation(hit.normal));
+                }
+            }
+
+            if (_timeRemaining > 0)
             {
                 _timeRemaining -= Time.deltaTime;
             }
@@ -67,8 +78,7 @@ public class EyeLaser : MonoBehaviour
                     if (hit.collider.TryGetComponent(out IHitable hitable))
                     {
                         hitable.ApplyDamage(_damage);
-                    }
-                    Debug.Log(hit.transform.name);
+                    }             
                 }
 
                 _timeRemaining = _timePerHit;
