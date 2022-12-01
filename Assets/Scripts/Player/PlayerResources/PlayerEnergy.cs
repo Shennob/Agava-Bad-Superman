@@ -30,6 +30,11 @@ public class PlayerEnergy : MonoBehaviour
         }       
     }
 
+    public void SetMaxEnergy(float value)
+    {
+        _maxEnergy += value;
+    }
+
     public void DecreaseEnergy(float value)
     {
         StopRestoreEnergy();

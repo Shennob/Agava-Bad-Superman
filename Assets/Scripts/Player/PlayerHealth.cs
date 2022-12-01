@@ -17,6 +17,11 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private bool _isAlive = true;
 
+    public void SetMaxHealth(float value)
+    {
+        _maxHealth += value;
+    }
+
     public void Damage(float amount)
     {
         _health -= amount;
