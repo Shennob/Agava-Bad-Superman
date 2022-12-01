@@ -25,11 +25,14 @@ public class CarHealth : MonoBehaviour, IHitable
     [SerializeField] private SplineSeter _splineSeter;
 
     private bool _isExplouse = false;
+    private int _expirienceValue = 50;
     private WantedLevel _wantedLevel;
+    private PlayerExperience _playerExperience;
 
     private void Awake()
     {
         _wantedLevel = FindObjectOfType<WantedLevel>();
+        _playerExperience = FindObjectOfType<PlayerExperience>();
     }
 
     public void ApplyDamage(float damage)
@@ -75,6 +78,7 @@ public class CarHealth : MonoBehaviour, IHitable
         StartCoroutine(DestroyWithDelay());
         StartCoroutine(EnableFireWithDelay());
         AddWantedPoints();
+        AddExpirience();
         _splineSeter.StopMovement();
         _isExplouse = true;
     }
@@ -100,5 +104,10 @@ public class CarHealth : MonoBehaviour, IHitable
     public void AddWantedPoints()
     {
         _wantedLevel.AddPoints(_wantedPointsToAdd);
+    }
+
+    public void AddExpirience()
+    {
+        _playerExperience.AddExpirience(_expirienceValue);
     }
 }

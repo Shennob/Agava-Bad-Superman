@@ -14,8 +14,21 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     [SerializeField] private CharacterRespawner _respawner;
     [SerializeField] private float _respawnTime;
     [SerializeField] private WantedLevel _wantedLevel;
+    [SerializeField] private PlayerTalents _playerTalents;
 
     private bool _isAlive = true;
+
+    public float MaxHealth => _maxHealth;
+
+    public void AddMaxHealth(float value)
+    {
+        _maxHealth += value;
+    }
+
+    public void ResetMaxHealth(float value)
+    {
+        _maxHealth = value;
+    }
 
     public void Damage(float amount)
     {
@@ -43,8 +56,9 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         yield return new WaitForSeconds(_respawnTime);
         _respawner.Respawn();
-        _health = _maxHealth;
         _wantedLevel.ResetWantedLevel();
+        _playerTalents.ResetTalents();
         _animator.SetBool(IsDie, false);
+        _health = _maxHealth;
     }
 }
