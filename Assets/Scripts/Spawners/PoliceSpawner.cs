@@ -20,7 +20,7 @@ public class PoliceSpawner : MonoBehaviour, ISpawner
 
     private void OnEnable()
     {
-        _wantedLevel.LevelChange += OnLevelChanged;
+        _wantedLevel.IncreaseLevel += OnLevelChanged;
     }
 
     private void Update()
@@ -33,7 +33,7 @@ public class PoliceSpawner : MonoBehaviour, ISpawner
 
     private void OnDisable()
     {
-        _wantedLevel.LevelChange -= OnLevelChanged;
+        _wantedLevel.IncreaseLevel -= OnLevelChanged;
     }
 
     public void Spawn()

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class WantedLevel : MonoBehaviour
@@ -19,7 +20,8 @@ public class WantedLevel : MonoBehaviour
 
     public int CurrentWantedLevel => _currentWantedLevel;
 
-    public Action<int> LevelChange;
+    public Action<int> IncreaseLevel;
+    public Action<int> DecreaseLevel;
 
     private void Awake()
     {
@@ -38,18 +40,7 @@ public class WantedLevel : MonoBehaviour
         if(_currentTime >= _timeToDisableStar)
         {
             _currentWantedLevel = 0;
-            var stars = _starPanel.GetComponentInChildren<Transform>();
-
-            foreach (Transform star in stars)
-            {
-                Destroy(star.gameObject);
-            }
-
-            for (int i = 0; i < _currentWantedLevel; i++)
-            {
-                LevelChange?.Invoke(_currentWantedLevel);
-                _previousWantedLevel = _currentWantedLevel;
-            }
+            DisableStars();
         }
     }
 
@@ -75,7 +66,7 @@ public class WantedLevel : MonoBehaviour
 
         if(_currentWantedLevel > _previousWantedLevel)
         {
-            LevelChange?.Invoke(_currentWantedLevel);
+            IncreaseLevel?.Invoke(_currentWantedLevel);
             _previousWantedLevel = _currentWantedLevel;
         }        
     }
@@ -85,27 +76,18 @@ public class WantedLevel : MonoBehaviour
         _wantedPoints = 0;
         _currentWantedLevel = 0;
         _previousWantedLevel = 0;
-        var stars = _starPanel.GetComponentInChildren<Transform>();
-
-        foreach(Transform star in stars)
-        {
-            Destroy(star.gameObject);
-        }
+        DisableStars();
     }
 
     public void SetWantedLevel(int level)
     {
         _currentWantedLevel = level;
-        var stars = _starPanel.GetComponentInChildren<Transform>();
 
-        foreach (Transform star in stars)
-        {
-            Destroy(star.gameObject);
-        }
+        DisableStars();
 
         for (int i = 0; i < _currentWantedLevel; i++)
         {
-            LevelChange?.Invoke(_currentWantedLevel);
+            IncreaseLevel?.Invoke(_currentWantedLevel);
             _previousWantedLevel = _currentWantedLevel;
         }
 
@@ -123,5 +105,15 @@ public class WantedLevel : MonoBehaviour
         }
 
         _isTimerStart = true;
+    }
+
+    private void DisableStars()
+    {
+        var stars = _starPanel.GetComponentInChildren<Transform>();
+
+        foreach (Transform star in stars)
+        {
+            Destroy(star.gameObject);
+        }
     }
 }

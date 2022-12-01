@@ -16,12 +16,12 @@ public class WantedStarView : MonoBehaviour
 
     private void OnEnable()
     {
-        _wantedLevel.LevelChange += OnWantedLevelUp;
+        _wantedLevel.IncreaseLevel += OnWantedLevelUp;
     }
 
     private void OnDisable()
     {
-        _wantedLevel.LevelChange -= OnWantedLevelUp;
+        _wantedLevel.IncreaseLevel -= OnWantedLevelUp;
     }
 
     private void OnWantedLevelUp(int wantedLevel)
