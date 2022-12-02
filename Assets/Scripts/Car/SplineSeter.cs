@@ -7,10 +7,10 @@ public class SplineSeter : MonoBehaviour
 {
     [SerializeField] private SplineFollower _splineFollower;
 
-    private void Awake()
-    {
-        _splineFollower.spline = FindObjectOfType<SplineComputer>();
-    }
+    //private void Awake()
+    //{
+    //    _splineFollower.spline = FindObjectOfType<SplineComputer>();
+    //}
 
     public void StopMovement()
     {
