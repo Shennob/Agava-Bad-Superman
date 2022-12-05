@@ -10,6 +10,7 @@ Material:
   m_Name: Sky ferma
   m_Shader: {fileID: 4800000, guid: aa71fc2da2f924844a83aebcb690f20a, type: 3}
   m_ValidKeywords:
+  - _ENABLEFOG_ON
   - _ENABLEROTATION_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 0
@@ -82,18 +83,18 @@ Material:
     - _Advancedd: 1
     - _BumpScale: 1
     - _CUBEMAPP: 1
-    - _CubemapPosition: -0.24
-    - _Cubemapp: 1
+    - _CubemapPosition: 0.29
+    - _Cubemapp: 5
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EnableFog: 0
+    - _EnableFog: 1
     - _EnableRotation: 1
-    - _Exposure: 1.03
+    - _Exposure: 1.39
     - _Float0: 0
     - _FogFill: 0.816
     - _FogHeight: 0.314
-    - _FogIntensity: 1
+    - _FogIntensity: 0.58
     - _FogMessage: 0
     - _FogPosition: -0.92
     - _FogSmoothness: 0.015
@@ -110,7 +111,7 @@ Material:
     - _Rotation: 0
     - _RotationSpeed: 2
     - _Rotationn: 1
-    - _SkyboxExtended: 1
+    - _SkyboxExtended: 5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
