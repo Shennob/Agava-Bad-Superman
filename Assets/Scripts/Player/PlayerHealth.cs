@@ -24,6 +24,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     public void AddMaxHealth(float value)
     {
         _maxHealth += value;
+        _health = _maxHealth;
     }
 
     public void ResetMaxHealth(float value)
