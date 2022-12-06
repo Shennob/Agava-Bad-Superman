@@ -1,4 +1,5 @@
 using Opsive.Shared.Input;
+using Opsive.UltimateCharacterController.Character;
 using TMPro;
 using UnityEngine;
 
