@@ -27,6 +27,11 @@ namespace BehaviorDesigner.Runtime.Tasks.Movement
         // There is no success or fail state with wander - the agent will just keep wandering
         public override TaskStatus OnUpdate()
         {
+            if(float.Parse(speed.ToString()) > 7f)
+            {
+                gameObject.GetComponent<Animator>().SetBool("IsRun", true);
+            }
+
             if (HasArrived()) {
                 // The agent should pause at the destination only if the max pause duration is greater than 0
                 if (maxPauseDuration.Value > 0) {
