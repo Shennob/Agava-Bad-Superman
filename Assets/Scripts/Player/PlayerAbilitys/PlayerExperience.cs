@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerExperience : MonoBehaviour
 {
@@ -10,6 +9,14 @@ public class PlayerExperience : MonoBehaviour
     private int _maxLevel = 50;
     private int _currentExpirienceValue;
     private int _maxExpirienceValue = 100;
+
+    public UnityAction<float, float> ChangeExperience;
+    public UnityAction<int> ChangeLevel;
+
+    private void Start()
+    {
+        ChangeExperience?.Invoke(_currentExpirienceValue, _maxExpirienceValue);
+    }
 
     public void AddExpirience(int value)
     {
@@ -24,6 +31,8 @@ public class PlayerExperience : MonoBehaviour
             {
                 _currentExpirienceValue += value;
             }
+
+            ChangeExperience?.Invoke(_currentExpirienceValue, _maxExpirienceValue);
         }
     }
 
@@ -31,5 +40,6 @@ public class PlayerExperience : MonoBehaviour
     {
         _currentLevel++;
         _playerTalents.ShowTalentsPanel();
+        ChangeLevel?.Invoke(_currentLevel);
     }
 }

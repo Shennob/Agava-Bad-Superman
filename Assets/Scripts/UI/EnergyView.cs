@@ -1,28 +1,16 @@
 using UnityEngine;
-using UnityEngine.UI;
 
-public class EnergyView : MonoBehaviour
+public class EnergyView : View
 {
-    [SerializeField] private Slider _slider;
     [SerializeField] private PlayerEnergy _playerEnergy;
-
-    private void Awake()
-    {
-        _slider.value = _slider.maxValue;
-    }
 
     private void OnEnable()
     {
-        _playerEnergy.ChangeEnergy += OnEnergyChanged;
+        _playerEnergy.ChangeEnergy += OnValueChanged;
     }
 
     private void OnDisable()
     {
-        _playerEnergy.ChangeEnergy -= OnEnergyChanged;
-    }
-
-    private void OnEnergyChanged(float currentEnergy, float maxEnergy)
-    {
-        _slider.value = currentEnergy / maxEnergy;
+        _playerEnergy.ChangeEnergy -= OnValueChanged;
     }
 }

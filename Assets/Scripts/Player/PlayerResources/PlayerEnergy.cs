@@ -21,6 +21,7 @@ public class PlayerEnergy : MonoBehaviour
     private void Start()
     {
         _currentEnergy = _maxEnergy;
+        ChangeEnergy?.Invoke(_currentEnergy, _maxEnergy);
     }
 
     private void Update()
@@ -34,11 +35,13 @@ public class PlayerEnergy : MonoBehaviour
     public void AddMaxEnergy(float value)
     {
         _maxEnergy += value;
+        ChangeEnergy?.Invoke(_currentEnergy, _maxEnergy);
     }
 
     public void ResetMaxEnergy(float value)
     {
         _maxEnergy = value;
+        ChangeEnergy?.Invoke(_currentEnergy, _maxEnergy);
     }
 
     public void DecreaseEnergy(float value)

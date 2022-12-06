@@ -3,6 +3,7 @@ using Opsive.UltimateCharacterController.Traits;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerHealth : MonoBehaviour, IDamageable
 {
@@ -18,12 +19,21 @@ public class PlayerHealth : MonoBehaviour, IDamageable
 
     private bool _isAlive = true;
 
+    public UnityAction<float, float> ChangeHealth;
+
     public float MaxHealth => _maxHealth;
     public float Health => _health;
+
+    private void Start()
+    {
+        ChangeHealth?.Invoke(_health, _maxHealth);
+    }
 
     public void AddMaxHealth(float value)
     {
         _maxHealth += value;
+        _health = _maxHealth;
+        ChangeHealth?.Invoke(_health, _maxHealth);
     }
 
     public void ResetMaxHealth(float value)
@@ -35,11 +45,14 @@ public class PlayerHealth : MonoBehaviour, IDamageable
     {
         _health -= amount;
 
-        if(_health <= 0)
+        if (_health <= 0)
         {
             Die();
+            _health = 0;
             _isAlive = false;
         }
+
+        ChangeHealth?.Invoke(_health, _maxHealth);
     }
 
     public bool IsAlive()
@@ -61,5 +74,6 @@ public class PlayerHealth : MonoBehaviour, IDamageable
         _playerTalents.ResetTalents();
         _animator.SetBool(IsDie, false);
         _health = _maxHealth;
+        ChangeHealth?.Invoke(_health, _maxHealth);
     }
 }
