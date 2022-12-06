@@ -29,7 +29,8 @@ public class WantedLevel : MonoBehaviour
 
     private void Awake()
     {
-        ResetWantedLevel();
+        _starPanel = FindObjectOfType<WantedStarView>().gameObject;
+        ResetWantedLevel();  
     }
 
     private void Update()

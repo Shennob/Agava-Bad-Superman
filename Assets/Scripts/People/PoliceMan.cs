@@ -12,17 +12,12 @@ public class PoliceMan : MonoBehaviour
 
     private WantedLevel _wantedLevel;
 
-    private void Awake()
+    private void Start()
     {
         _wantedLevel = FindObjectOfType<WantedLevel>();
-
-        StateChange();
-    }
-
-    private void OnEnable()
-    {
         _wantedLevel.IncreaseLevel += OnLevelChanged;
         _wantedLevel.DecreaseLevel += OnLevelChanged;
+        StateChange();
     }
 
     private void OnDisable()

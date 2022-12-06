@@ -7,7 +7,7 @@ public class BehaviorTreePlayerSeter : MonoBehaviour
 {
     [SerializeField] private BehaviorTree _followTree;
 
-    private void Awake()
+    private void Start()
     {
         var player = FindObjectOfType<PlayerAnimations>().gameObject;
 
