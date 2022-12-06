@@ -20,6 +20,8 @@ public class EyeLaser : MonoBehaviour
     private Vector3 _offset = new Vector3(0.5f, 0.5f, 0);
     private List<GameObject> _instances = new List<GameObject>();
 
+    public float MaxLength => _maxLength;
+
     void Update()
     {
         RotateToMouseDirection();
@@ -33,6 +35,16 @@ public class EyeLaser : MonoBehaviour
         {
             DestroyLaser();
         }
+    }
+
+    public void AddMaxLength(float value)
+    {
+        _maxLength += value;
+    }
+
+    public void ResetMaxLength( float value)
+    {
+        _maxLength = value;
     }
 
     private void CreateLaser()
