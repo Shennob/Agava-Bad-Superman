@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18351904, g: 0.22907032, b: 0.30568576, a: 1}
+  m_IndirectSpecularColor: {r: 0.18352325, g: 0.22907263, b: 0.3056727, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -148,7 +148,7 @@ MonoBehaviour:
   _saveKey: Medusa
   _name: Medusa
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!1001 &50657900
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10590,7 +10590,7 @@ MonoBehaviour:
   _saveKey: Joker
   _name: Joker
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!4 &423399193 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4307780730024298, guid: 62932fb57e1adde41b35493d4720f61b, type: 3}
@@ -10879,7 +10879,7 @@ MonoBehaviour:
   _saveKey: Butcher
   _name: Butcher
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!4 &591026081 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4615886734921068, guid: 773d21b665a278541ae517d2cf706d63, type: 3}
@@ -11033,7 +11033,7 @@ MonoBehaviour:
   _saveKey: Gym Master
   _name: Gym Master
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!4 &617610359 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4544534225108764, guid: bd120dc5c7969ed49b7dd7c80dc00d43, type: 3}
@@ -16197,7 +16197,7 @@ MonoBehaviour:
   _saveKey: Werwolf
   _name: Werwolf
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!4 &904643658 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4247533588952472, guid: cba37d692e4010142866a333e7a5a33d, type: 3}
@@ -21866,7 +21866,7 @@ MonoBehaviour:
   _saveKey: Evil God
   _name: Evil God
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!1001 &1024576795
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22286,7 +22286,7 @@ MonoBehaviour:
   _saveKey: Anubis
   _name: Anubis
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!4 &1133800337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6144172119060957611, guid: eb7eab0b11eac084ea896fea1eb3115e, type: 3}
@@ -22312,7 +22312,7 @@ MonoBehaviour:
   _saveKey: Ghoul
   _name: Ghoul
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!4 &1142864226 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4890821320505870, guid: ce0a8a2c06974f34ba70d198042653d7, type: 3}
@@ -38115,7 +38115,7 @@ MonoBehaviour:
   _saveKey: Red demon
   _name: Red demon
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!1001 &1556821145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43917,7 +43917,7 @@ MonoBehaviour:
   _saveKey: Demon
   _name: Demon
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!4 &1935370758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4097291854726576, guid: 1f4f41b903e713940902436c0d454213, type: 3}
@@ -43948,7 +43948,7 @@ MonoBehaviour:
   _saveKey: Mutant
   _name: Mutant
   _price: 1000
-  _isBuyed: 0
+  _isBuyed: 1
 --- !u!1 &1978645476
 GameObject:
   m_ObjectHideFlags: 0
