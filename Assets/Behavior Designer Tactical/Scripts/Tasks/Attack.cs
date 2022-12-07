@@ -14,13 +14,25 @@ namespace BehaviorDesigner.Runtime.Tactical.Tasks
         public override TaskStatus OnUpdate()
         {
             var baseStatus = base.OnUpdate();
+            Animator animator = gameObject.GetComponent<Animator>();
+
             if (baseStatus != TaskStatus.Running || !started) {
+                animator.SetBool("IsPistolIdle", true);
                 return baseStatus;
             }
 
             if (MoveToAttackPosition()) {
                 tacticalAgent.TryAttack();
+                animator.SetBool("IsPistolIdle", true);
             }
+
+            if(baseStatus == TaskStatus.Running)
+            {
+                animator.SetBool("IsPistolWalk", true);
+                animator.SetBool("IsPistolIdle", false);
+            }
+
+            Debug.Log(baseStatus);
 
             return TaskStatus.Running;
         }
