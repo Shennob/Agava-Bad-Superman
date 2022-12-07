@@ -25,7 +25,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         /// <summary>
         /// Initialize the default values.
         /// </summary>
-        private void Awake()
+        private void Start()
         {
             lastAttackTime = -repeatAttackDelay;
             _playerHealth = FindObjectOfType<PlayerHealth>();

@@ -15,6 +15,12 @@ public class TalentsView : MonoBehaviour
     [SerializeField] private TMP_Text _currentJumpText;
     [SerializeField] private PlayerTalents _playerTalents;
 
+    private void Start()
+    {
+        _playerTalents = FindObjectOfType<PlayerTalents>();
+        Render();
+    }
+
     private void OnEnable()
     {
         Render();

@@ -25,6 +25,8 @@ public class Wallet : MonoBehaviour
         {
             _coins = 0;
         }
+
+        _coinText = FindObjectOfType<MoneyView>().GetComponent<TMP_Text>();
     }
 
     private void Start()

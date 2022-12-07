@@ -7,7 +7,7 @@ public class CivilianPeopleTargetSeter : MonoBehaviour
 {
     [SerializeField] private BehaviorTree _canSeeTree;
 
-    private void Awake()
+    private void Start()
     {
         var player = FindObjectOfType<PlayerAnimations>().gameObject;
 

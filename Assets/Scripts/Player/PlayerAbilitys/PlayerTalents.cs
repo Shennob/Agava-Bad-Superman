@@ -34,6 +34,11 @@ public class PlayerTalents : MonoBehaviour
     public float MaxRange => _eyeLaser.MaxLength;
     public float JumpForce => _jumpAbility.Force;
 
+    private void Awake()
+    {
+        _talentsHolder = FindObjectOfType<TalentsView>().GetComponent<Transform>();
+    }
+
     private void Start()
     {
         _jumpAbility = _characterLocomotion.GetAbility<Jump>();
@@ -41,7 +46,7 @@ public class PlayerTalents : MonoBehaviour
         _defaultHealth = _playerHealth.MaxHealth;
         _defaultEnergy = _playerEnergy.MaxEnergy;
         _defaultRange = _eyeLaser.MaxLength;
-        _defaultJumpForce = _jumpAbility.Force;
+        _defaultJumpForce = _jumpAbility.Force;      
     }
 
     public void IncreaseHealth()

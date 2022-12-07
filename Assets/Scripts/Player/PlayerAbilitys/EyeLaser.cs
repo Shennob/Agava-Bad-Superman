@@ -22,6 +22,11 @@ public class EyeLaser : MonoBehaviour
 
     public float MaxLength => _maxLength;
 
+    private void Awake()
+    {
+        _camera = Camera.main;
+    }
+
     void Update()
     {
         RotateToMouseDirection();
