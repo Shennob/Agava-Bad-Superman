@@ -30,7 +30,7 @@ public class CarHealth : MonoBehaviour, IHitable
     private WantedLevel _wantedLevel;
     private PlayerExperience _playerExperience;
 
-    private void Awake()
+    private void Start()
     {
         _wantedLevel = FindObjectOfType<WantedLevel>();
         _playerExperience = FindObjectOfType<PlayerExperience>();

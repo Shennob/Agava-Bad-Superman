@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class TalentsView : MonoBehaviour
 {
@@ -13,7 +12,12 @@ public class TalentsView : MonoBehaviour
     [SerializeField] private TMP_Text _currentEnergyText;
     [SerializeField] private TMP_Text _currentRangeText;
     [SerializeField] private TMP_Text _currentJumpText;
-    [SerializeField] private PlayerTalents _playerTalents;
+    [SerializeField] private Button _buttonHealth;
+    [SerializeField] private Button _buttonEnergy;
+    [SerializeField] private Button _buttonRange;
+    [SerializeField] private Button _buttonJump;
+
+    private PlayerTalents _playerTalents;
 
     private void Start()
     {
@@ -24,6 +28,18 @@ public class TalentsView : MonoBehaviour
     private void OnEnable()
     {
         Render();
+        _buttonHealth.onClick.AddListener(OnClickHealthUp);
+        _buttonEnergy.onClick.AddListener(OnClickEnergyUp);
+        _buttonRange.onClick.AddListener(OnClickRangeUp);
+        _buttonJump.onClick.AddListener(OnClickJumpUp);
+    }
+
+    private void OnDisable()
+    {
+        _buttonHealth.onClick.RemoveListener(OnClickHealthUp);
+        _buttonEnergy.onClick.RemoveListener(OnClickEnergyUp);
+        _buttonRange.onClick.RemoveListener(OnClickRangeUp);
+        _buttonJump.onClick.RemoveListener(OnClickJumpUp);
     }
 
     private void Render()
@@ -36,5 +52,25 @@ public class TalentsView : MonoBehaviour
         _currentEnergyText.text = _playerTalents.MaxEnergy.ToString() + " Energy";
         _currentRangeText.text = _playerTalents.MaxRange.ToString() + " meters laser";
         _currentJumpText.text = _playerTalents.JumpForce.ToString() + " meters jump";
+    }
+
+    private void OnClickHealthUp()
+    {
+        _playerTalents.IncreaseHealth();
+    }
+
+    private void OnClickEnergyUp()
+    {
+        _playerTalents.IncreaseEnergy();
+    }
+
+    private void OnClickRangeUp()
+    {
+        _playerTalents.IncreaceRange();
+    }
+
+    private void OnClickJumpUp()
+    {
+        _playerTalents.IncreaseJump();
     }
 }
