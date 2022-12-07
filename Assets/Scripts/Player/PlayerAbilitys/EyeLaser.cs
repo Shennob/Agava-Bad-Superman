@@ -4,7 +4,6 @@ using UnityEngine;
 public class EyeLaser : MonoBehaviour
 {
     [SerializeField] private Transform[] _firePoints;
-    [SerializeField] private Camera _camera;
     [SerializeField] private float _maxLength;
     [SerializeField] private GameObject _effectTemplate;
     [SerializeField] private float _damage = 3f;
@@ -14,6 +13,7 @@ public class EyeLaser : MonoBehaviour
     [SerializeField] private LayerMask _ignoreMask;
     [SerializeField] private ParticleSystem _decalParticle;
 
+    private Camera _camera;
     private Ray _ray;
     private float _timeRemaining;
     private Vector3 _direction;
@@ -73,13 +73,13 @@ public class EyeLaser : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(_ray.origin, _direction, out hit, _maxLength, ~_ignoreMask))
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength, ~_ignoreMask))
             {              
                 Debug.Log(hit.transform.name);
 
                 if (hit.transform.tag == "Dirt")
                 {
-                    Instantiate(_decalParticle, hit.point,
+                    Instantiate(_decalParticle, hit.point + hit.normal * 0.05F,
                         Quaternion.LookRotation(hit.normal));
                 }
             }
@@ -90,7 +90,7 @@ public class EyeLaser : MonoBehaviour
             }
             else
             {
-                if (Physics.Raycast(_ray.origin, _direction, out hit, _maxLength, ~_ignoreMask))
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, _maxLength, ~_ignoreMask))
                 {
                     if (hit.collider.TryGetComponent(out IHitable hitable))
                     {
