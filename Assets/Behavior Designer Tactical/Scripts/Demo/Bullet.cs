@@ -40,10 +40,12 @@ namespace BehaviorDesigner.Runtime.Tactical
         private void OnCollisionEnter(Collision collision)
         {
             IDamageable damageable;
-            if ((damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable) != null) {
+            if ((damageable = collision.gameObject.GetComponent(typeof(IDamageable)) as IDamageable) != null)
+            {
                 damageable.Damage(damageAmount);
-                Destroy(gameObject);
             }
+
+            Destroy(gameObject);
         }
 
         /// <summary>
