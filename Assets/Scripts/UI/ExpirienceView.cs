@@ -9,6 +9,12 @@ public class ExpirienceView : View
     [SerializeField] private UnityInput _unityInput;
     [SerializeField] private TMP_Text _currentLevel;
 
+    private void Awake()
+    {
+        _playerExperience = FindObjectOfType<PlayerExperience>();
+        _unityInput = FindObjectOfType<UnityInput>();
+    }
+
     private void OnEnable()
     {
         _playerExperience.ChangeExperience += OnValueChanged;
