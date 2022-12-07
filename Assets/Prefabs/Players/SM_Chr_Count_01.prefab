@@ -1122,7 +1122,7 @@ MonoBehaviour:
   m_OnLandEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 899506780406171419}
         m_TargetAssemblyTypeName: PlayerAnimations, Assembly-CSharp
         m_MethodName: EndJumpAnimation
         m_Mode: 1
@@ -1560,8 +1560,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 899506780406171418}
   _enabledColliders:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1483945780794454269}
+  - {fileID: 8639412213493504150}
 --- !u!114 &899506780406171430
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,6 +2254,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 945995262256987388}
+  - component: {fileID: 8639412213493504150}
+  - component: {fileID: 5544758735288976121}
   m_Layer: 30
   m_Name: Hand_R
   m_TagString: Untagged
@@ -2280,6 +2282,33 @@ Transform:
   m_Father: {fileID: 954613819281273532}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8639412213493504150
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948631240250418446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.1
+  m_Direction: 0
+  m_Center: {x: 0.17, y: 0, z: 0}
+--- !u!114 &5544758735288976121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948631240250418446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1326db9c0336e4c42a35deb7d92b052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &948639736690268008
 GameObject:
   m_ObjectHideFlags: 0
@@ -3842,6 +3871,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 945930903412087570}
+  - component: {fileID: 1483945780794454269}
+  - component: {fileID: 5437134683398373301}
   m_Layer: 30
   m_Name: Hand_L
   m_TagString: Untagged
@@ -3868,6 +3899,33 @@ Transform:
   m_Father: {fileID: 945824256770528862}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1483945780794454269
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948939512788517126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.1
+  m_Direction: 0
+  m_Center: {x: -0.13, y: 0, z: 0}
+--- !u!114 &5437134683398373301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 948939512788517126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1326db9c0336e4c42a35deb7d92b052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &948941076246403334
 GameObject:
   m_ObjectHideFlags: 0

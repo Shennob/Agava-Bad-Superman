@@ -379,7 +379,6 @@ MonoBehaviour:
   _firePoints:
   - {fileID: 776349786}
   - {fileID: 1618861075}
-  _camera: {fileID: 0}
   _maxLength: 50
   _effectTemplate: {fileID: 1418158253269514, guid: 280b8b1393d77f148a8cbcfc7f36e116, type: 3}
   _damage: 5
@@ -834,6 +833,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5425611465854011080}
+  - component: {fileID: 3840765029573089601}
+  - component: {fileID: 1141484241528016679}
   m_Layer: 30
   m_Name: Hand_R
   m_TagString: Untagged
@@ -860,6 +861,33 @@ Transform:
   m_Father: {fileID: 5428362941348771230}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3840765029573089601
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422478129553264796}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.1
+  m_Direction: 0
+  m_Center: {x: 0.17, y: 0, z: 0}
+--- !u!114 &1141484241528016679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5422478129553264796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1326db9c0336e4c42a35deb7d92b052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &5422478344789812182
 GameObject:
   m_ObjectHideFlags: 0
@@ -3041,7 +3069,7 @@ MonoBehaviour:
   m_OnLandEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1684536946}
         m_TargetAssemblyTypeName: PlayerAnimations, Assembly-CSharp
         m_MethodName: EndJumpAnimation
         m_Mode: 1
@@ -3155,8 +3183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 5338765379345511150}
   _enabledColliders:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8212081543571392680}
+  - {fileID: 3840765029573089601}
 --- !u!114 &1684536943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,6 +5073,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5425349025753775870}
+  - component: {fileID: 8212081543571392680}
+  - component: {fileID: 8144827807649412251}
   m_Layer: 30
   m_Name: Hand_L
   m_TagString: Untagged
@@ -5071,3 +5101,30 @@ Transform:
   m_Father: {fileID: 5428517086540134014}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &8212081543571392680
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424263168040226146}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.1
+  m_Direction: 0
+  m_Center: {x: -0.13, y: 0, z: 0}
+--- !u!114 &8144827807649412251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5424263168040226146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1326db9c0336e4c42a35deb7d92b052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5

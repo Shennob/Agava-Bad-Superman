@@ -2336,6 +2336,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3954054718513362560}
+  - component: {fileID: 3582235146124852850}
+  - component: {fileID: 5101270479116238435}
   m_Layer: 30
   m_Name: Hand_L
   m_TagString: Untagged
@@ -2362,6 +2364,33 @@ Transform:
   m_Father: {fileID: 3953890655746602512}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &3582235146124852850
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951192235616399262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.1
+  m_Direction: 0
+  m_Center: {x: -0.13, y: 0, z: 0}
+--- !u!114 &5101270479116238435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951192235616399262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1326db9c0336e4c42a35deb7d92b052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &3951224017876420364
 GameObject:
   m_ObjectHideFlags: 0
@@ -2641,6 +2670,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3945259955917750808}
+  - component: {fileID: 7910443055049869466}
+  - component: {fileID: 6731895259681234508}
   m_Layer: 30
   m_Name: Hand_R
   m_TagString: Untagged
@@ -2667,6 +2698,33 @@ Transform:
   m_Father: {fileID: 3953702997672225484}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &7910443055049869466
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951268542495445446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.2
+  m_Height: 0.1
+  m_Direction: 0
+  m_Center: {x: 0.17, y: 0, z: 0}
+--- !u!114 &6731895259681234508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3951268542495445446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1326db9c0336e4c42a35deb7d92b052c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 5
 --- !u!1 &3951274363567858030
 GameObject:
   m_ObjectHideFlags: 0
@@ -3624,7 +3682,7 @@ MonoBehaviour:
   m_OnLandEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4839084869853548537}
         m_TargetAssemblyTypeName: PlayerAnimations, Assembly-CSharp
         m_MethodName: EndJumpAnimation
         m_Mode: 1
@@ -4062,8 +4120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 3999943744017450704}
   _enabledColliders:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3582235146124852850}
+  - {fileID: 7910443055049869466}
 --- !u!114 &6391770891878185180
 MonoBehaviour:
   m_ObjectHideFlags: 0
