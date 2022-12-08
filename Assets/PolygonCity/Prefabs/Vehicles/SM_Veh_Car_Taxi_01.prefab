@@ -761,6 +761,7 @@ MonoBehaviour:
   _wantedPointsToAdd: 10
   _splineSeter: {fileID: 4860007630197408220}
   _policeCar: {fileID: 0}
+  _audioSource: {fileID: 7513674683200914348}
 --- !u!54 &4479020678318844804
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1902,6 +1903,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89fdb9fee1f1fe94cb02018221255e50, type: 3}
+--- !u!82 &7513674683200914348 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82099476830064962, guid: 89fdb9fee1f1fe94cb02018221255e50, type: 3}
+  m_PrefabInstance: {fileID: 7594830779054215918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7594830779054339434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 419716, guid: 89fdb9fee1f1fe94cb02018221255e50, type: 3}

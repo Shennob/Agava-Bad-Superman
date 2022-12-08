@@ -2937,8 +2937,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.2
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!114 &-63663368103656568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2969,7 +2969,7 @@ MonoBehaviour:
   _position: {fileID: 7449750264221430992}
   bullet: {fileID: 100000, guid: 1f64829979706394d98b1060ef20f747, type: 3}
   attackDistance: 50
-  repeatAttackDelay: 0.5
+  repeatAttackDelay: 1.5
   attackAngle: 1
 --- !u!114 &6562746125620327388
 MonoBehaviour:
@@ -3009,8 +3009,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.2
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!114 &5289453685901583031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3065,8 +3065,8 @@ MonoBehaviour:
         byteData: 
         byteDataArray: 
       Version: 1.7.2
-  gizmoViewMode: 0
-  showBehaviorDesignerGizmo: 0
+  gizmoViewMode: 2
+  showBehaviorDesignerGizmo: 1
 --- !u!114 &1004871126966757238
 MonoBehaviour:
   m_ObjectHideFlags: 0

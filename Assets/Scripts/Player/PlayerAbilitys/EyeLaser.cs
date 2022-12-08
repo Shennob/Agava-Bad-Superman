@@ -12,6 +12,7 @@ public class EyeLaser : MonoBehaviour
     [SerializeField] private float _energyCost = 5f;
     [SerializeField] private LayerMask _ignoreMask;
     [SerializeField] private ParticleSystem _decalParticle;
+    [SerializeField] private AudioSource _audioSource;
 
     private Camera _camera;
     private Ray _ray;
@@ -81,6 +82,7 @@ public class EyeLaser : MonoBehaviour
                 {
                     Instantiate(_decalParticle, hit.point + hit.normal * 0.05F,
                         Quaternion.LookRotation(hit.normal));
+                    _audioSource.Play();
                 }
             }
 
@@ -122,6 +124,7 @@ public class EyeLaser : MonoBehaviour
         {
             if (_instances.Count >= 1)
             {
+                _audioSource.Stop();
                 Destroy(_instances[i]);
             }
         }

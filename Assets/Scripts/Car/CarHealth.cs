@@ -24,6 +24,7 @@ public class CarHealth : MonoBehaviour, IHitable
     [SerializeField] private int _wantedPointsToAdd;
     [SerializeField] private SplineSeter _splineSeter;
     [SerializeField] private PoliceCar _policeCar;
+    [SerializeField] private AudioSource _audioSource;
 
     private bool _isExplouse = false;
     private int _expirienceValue = 50;
@@ -87,6 +88,7 @@ public class CarHealth : MonoBehaviour, IHitable
             _policeCar.DestroyCar();
         }
 
+        _audioSource.Play();
         _isExplouse = true;
     }
 

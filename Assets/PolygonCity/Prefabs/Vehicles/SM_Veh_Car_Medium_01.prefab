@@ -595,6 +595,7 @@ MonoBehaviour:
   _wantedPointsToAdd: 10
   _splineSeter: {fileID: 1982032461966785075}
   _policeCar: {fileID: 0}
+  _audioSource: {fileID: 3680501760789936447}
 --- !u!54 &6758654298273702410
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1910,5 +1911,10 @@ ParticleSystem:
 --- !u!4 &3616506859623583737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 419716, guid: 89fdb9fee1f1fe94cb02018221255e50, type: 3}
+  m_PrefabInstance: {fileID: 3616506859623999613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3680501760789936447 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 82099476830064962, guid: 89fdb9fee1f1fe94cb02018221255e50, type: 3}
   m_PrefabInstance: {fileID: 3616506859623999613}
   m_PrefabAsset: {fileID: 0}

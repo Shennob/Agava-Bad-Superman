@@ -2266,7 +2266,7 @@ MonoBehaviour:
   _position: {fileID: 7385006914742083228}
   bullet: {fileID: 100000, guid: 1f64829979706394d98b1060ef20f747, type: 3}
   attackDistance: 50
-  repeatAttackDelay: 0.5
+  repeatAttackDelay: 1.5
   attackAngle: 1
 --- !u!114 &2782989307544737499
 MonoBehaviour:
