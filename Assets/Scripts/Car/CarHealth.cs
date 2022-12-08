@@ -112,7 +112,7 @@ public class CarHealth : MonoBehaviour, IHitable
 
     public void AddWantedPoints()
     {
-        if (_wantedLevel.CurrentWantedLevel > 2)
+        if (_wantedLevel.CurrentWantedLevel >= 2)
         {
             _wantedLevel.AddPoints(_wantedPointsToAdd);
         }
