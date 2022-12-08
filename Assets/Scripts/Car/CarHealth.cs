@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CarHealth : MonoBehaviour, IHitable
 {
@@ -25,7 +26,8 @@ public class CarHealth : MonoBehaviour, IHitable
     [SerializeField] private SplineSeter _splineSeter;
     [SerializeField] private PoliceCar _policeCar;
     [SerializeField] private AudioSource _audioSource;
-
+    [SerializeField] private CarSpawner[] _carSpawners;
+ 
     private bool _isExplouse = false;
     private int _expirienceValue = 50;
     private WantedLevel _wantedLevel;
@@ -35,6 +37,7 @@ public class CarHealth : MonoBehaviour, IHitable
     {
         _wantedLevel = FindObjectOfType<WantedLevel>();
         _playerExperience = FindObjectOfType<PlayerExperience>();
+        _carSpawners = FindObjectsOfType<CarSpawner>();
     }
 
     public void ApplyDamage(float damage)
@@ -101,6 +104,8 @@ public class CarHealth : MonoBehaviour, IHitable
     private IEnumerator DestroyWithDelay()
     {
         yield return new WaitForSeconds(_cooldownDestroy);
+        int id = Random.Range(0, _carSpawners.Length - 1);
+        _carSpawners[id].Spawn();
         Destroy(gameObject);
     }
 
