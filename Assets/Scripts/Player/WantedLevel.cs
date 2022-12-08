@@ -61,7 +61,12 @@ public class WantedLevel : MonoBehaviour
 
     public void AddPoints(int value)
     {
-        if(value < 0)
+        if (_currentWantedLevel == 5)
+        {
+            return;
+        }
+
+        if (value < 0)
         {
             throw new ArgumentOutOfRangeException("Points can't be negative");
         }
@@ -97,6 +102,11 @@ public class WantedLevel : MonoBehaviour
 
     public void SetWantedLevel(int level)
     {
+        if(_currentWantedLevel == 5)
+        {
+            return;
+        }
+
         if(_currentWantedLevel > 0)
         {
             DisableStars();

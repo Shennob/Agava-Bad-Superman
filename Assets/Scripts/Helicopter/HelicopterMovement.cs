@@ -15,6 +15,7 @@ public class HelicopterMovement : MonoBehaviour
     {
         _player = FindObjectOfType<WantedLevel>();
         _clossestWaypoint = _waypoints[0];
+        _body.gameObject.SetActive(false);
     }
 
     private void Update()
