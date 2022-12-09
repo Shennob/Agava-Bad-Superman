@@ -40,6 +40,8 @@ public class WantedLevel : MonoBehaviour
             return;
         }
 
+        Debug.Log(_currentWantedLevel);
+
         _currentTime += Time.deltaTime;
 
         if(_currentTime >= _timeToDisableStar)
@@ -61,7 +63,7 @@ public class WantedLevel : MonoBehaviour
 
     public void AddPoints(int value)
     {
-        if (_currentWantedLevel == 5)
+        if (_currentWantedLevel == _maxWantedLevel)
         {
             return;
         }
@@ -102,7 +104,7 @@ public class WantedLevel : MonoBehaviour
 
     public void SetWantedLevel(int level)
     {
-        if(_currentWantedLevel == 5)
+        if(_currentWantedLevel == _maxWantedLevel)
         {
             return;
         }
