@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!135 &7590711479759093705
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -407,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!135 &996092078375641525
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -534,6 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!135 &7910836011708288131
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -661,6 +664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!135 &6584608223323022430
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -872,7 +876,7 @@ Transform:
   m_GameObject: {fileID: 198730}
   m_LocalRotation: {x: 0, y: 0.04245226, z: 0, w: 0.99909854}
   m_LocalPosition: {x: -58.506584, y: -15.278387, z: -112.790085}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 459374}
@@ -973,6 +977,7 @@ MonoBehaviour:
   _splineSeter: {fileID: 2887994202908230644}
   _policeCar: {fileID: 0}
   _audioSource: {fileID: 7653781159338865950}
+  _carSpawners: []
 --- !u!65 &8292356964349828451
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1015,6 +1020,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _splineFollower: {fileID: 4692060170870942100}
+  _spline: {fileID: 0}
 --- !u!114 &4692060170870942100
 MonoBehaviour:
   m_ObjectHideFlags: 0

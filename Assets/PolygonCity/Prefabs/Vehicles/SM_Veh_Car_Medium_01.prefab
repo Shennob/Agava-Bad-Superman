@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!54 &6636976620380112407
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -225,6 +226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!54 &8336471675658117405
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -435,6 +437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!54 &2888353795906198514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -496,7 +499,7 @@ Transform:
   m_GameObject: {fileID: 157676}
   m_LocalRotation: {x: 0, y: 0.7250577, z: 0, w: 0.68868816}
   m_LocalPosition: {x: 2.69221, y: -15.27839, z: 51.95895}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 444414}
@@ -596,6 +599,7 @@ MonoBehaviour:
   _splineSeter: {fileID: 1982032461966785075}
   _policeCar: {fileID: 0}
   _audioSource: {fileID: 3680501760789936447}
+  _carSpawners: []
 --- !u!54 &6758654298273702410
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1414,6 +1418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _splineFollower: {fileID: 4995917212812865240}
+  _spline: {fileID: 0}
 --- !u!1 &169676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,6 +1683,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6442d71081338dc4c8e716694036318a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _speed: 4
 --- !u!54 &977514966672625653
 Rigidbody:
   m_ObjectHideFlags: 0
