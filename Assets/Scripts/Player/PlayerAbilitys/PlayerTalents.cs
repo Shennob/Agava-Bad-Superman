@@ -8,7 +8,6 @@ public class PlayerTalents : MonoBehaviour
     [SerializeField] private PlayerEnergy _playerEnergy;
     [SerializeField] private EyeLaser _eyeLaser;
     [SerializeField] private UltimateCharacterLocomotion _characterLocomotion;
-    [SerializeField] private TalentsView _talentsView;
 
     private int _healthLevel = 1;
     private int _energyLevel = 1;
@@ -24,6 +23,7 @@ public class PlayerTalents : MonoBehaviour
     private float _increaseRangeValue = 0.5f;
     private float _increaseJumpValue = 0.5f;
     private Jump _jumpAbility;
+    private TalentsView _talentsView;
 
     public int HealthLevel => _healthLevel;
     public int EnergyLevel => _energyLevel;
@@ -34,13 +34,9 @@ public class PlayerTalents : MonoBehaviour
     public float MaxRange => _eyeLaser.MaxLength;
     public float JumpForce => _jumpAbility.Force;
 
-    private void Awake()
-    {
-        _talentsView = FindObjectOfType<TalentsView>();
-    }
-
     private void Start()
     {
+        _talentsView = FindObjectOfType<TalentsView>();
         _jumpAbility = _characterLocomotion.GetAbility<Jump>();
         _defaultHealth = _playerHealth.MaxHealth;
         _defaultEnergy = _playerEnergy.MaxEnergy;
