@@ -32,6 +32,9 @@ public class Building : MonoBehaviour, IHitable
 
     public void AddWantedPoints()
     {
+        if (_wantedLevel.CurrentWantedLevel == 5)
+            return;
+
         if (_wantedLevel.CurrentWantedLevel >= 2)
         {
             _wantedLevel.AddPoints(_wantedPointsToAdd);
@@ -57,6 +60,8 @@ public class Building : MonoBehaviour, IHitable
         _meshRenderer.material = _destroyedMaterial;
         //_smoke.gameObject.SetActive(true);
         _fireParticle.gameObject.SetActive(true);
+        AddExpirience();
+        AddWantedPoints();
         StartCoroutine(RenewBuildingWithDelay());
     }
 
