@@ -22,12 +22,10 @@ public class TalentsView : MonoBehaviour
     private void Start()
     {
         _playerTalents = FindObjectOfType<PlayerTalents>();
-        Render();
     }
 
     private void OnEnable()
-    {
-        Render();
+    {       
         _buttonHealth.onClick.AddListener(OnClickHealthUp);
         _buttonEnergy.onClick.AddListener(OnClickEnergyUp);
         _buttonRange.onClick.AddListener(OnClickRangeUp);
@@ -42,7 +40,7 @@ public class TalentsView : MonoBehaviour
         _buttonJump.onClick.RemoveListener(OnClickJumpUp);
     }
 
-    private void Render()
+    public void Render()
     {
         _healthLevelText.text = _playerTalents.HealthLevel.ToString();
         _energyLevelText.text = _playerTalents.EnergyLevel.ToString();

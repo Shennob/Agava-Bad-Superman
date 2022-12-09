@@ -8,7 +8,7 @@ public class PlayerTalents : MonoBehaviour
     [SerializeField] private PlayerEnergy _playerEnergy;
     [SerializeField] private EyeLaser _eyeLaser;
     [SerializeField] private UltimateCharacterLocomotion _characterLocomotion;
-    [SerializeField] private Transform _talentsHolder;
+    [SerializeField] private TalentsView _talentsView;
 
     private int _healthLevel = 1;
     private int _energyLevel = 1;
@@ -36,17 +36,17 @@ public class PlayerTalents : MonoBehaviour
 
     private void Awake()
     {
-        _talentsHolder = FindObjectOfType<TalentsView>().GetComponent<Transform>();
+        _talentsView = FindObjectOfType<TalentsView>();
     }
 
     private void Start()
     {
         _jumpAbility = _characterLocomotion.GetAbility<Jump>();
-        _talentsHolder.gameObject.SetActive(false);
         _defaultHealth = _playerHealth.MaxHealth;
         _defaultEnergy = _playerEnergy.MaxEnergy;
         _defaultRange = _eyeLaser.MaxLength;
-        _defaultJumpForce = _jumpAbility.Force;      
+        _defaultJumpForce = _jumpAbility.Force;
+        _talentsView.gameObject.SetActive(false);
     }
 
     public void IncreaseHealth()
@@ -79,7 +79,8 @@ public class PlayerTalents : MonoBehaviour
 
     public void ShowTalentsPanel()
     {
-        _talentsHolder.gameObject.SetActive(true);
+        _talentsView.gameObject.SetActive(true);
+        _talentsView.Render();
     }
 
     public void ResetTalents()
@@ -96,6 +97,6 @@ public class PlayerTalents : MonoBehaviour
 
     private void HideTalentsPanel()
     {
-        _talentsHolder.gameObject.SetActive(false);
+        _talentsView.gameObject.SetActive(false);
     }
 }
