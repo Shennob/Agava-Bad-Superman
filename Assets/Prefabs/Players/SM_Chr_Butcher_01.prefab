@@ -4741,7 +4741,6 @@ MonoBehaviour:
   _playerEnergy: {fileID: 857185618142943692}
   _eyeLaser: {fileID: 1206457424196547526}
   _characterLocomotion: {fileID: 857185618142943740}
-  _talentsHolder: {fileID: 0}
 --- !u!114 &857185618142943695
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4797,6 +4796,7 @@ MonoBehaviour:
   _cooldownForThreeStar: 25
   _cooldownForFourStars: 30
   _cooldownForFiveStars: 35
+  _startPointsToOneLevel: 10
 --- !u!114 &857185618142943692
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,6 @@ public class PoliceCar : MonoBehaviour
 
     public void DestroyCar()
     {
-        _wantedLevel.UpDestroyedCar();
+        //_wantedLevel.UpDestroyedCar();
     }
 }

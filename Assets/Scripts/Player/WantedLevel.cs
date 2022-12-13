@@ -13,6 +13,7 @@ public class WantedLevel : MonoBehaviour
     [SerializeField] private float _cooldownForThreeStar;
     [SerializeField] private float _cooldownForFourStars;
     [SerializeField] private float _cooldownForFiveStars;
+    [SerializeField] private int _startPointsToOneLevel;
 
     private int _wantedPoints;
     private int _currentWantedLevel;
@@ -46,18 +47,19 @@ public class WantedLevel : MonoBehaviour
 
         if(_currentTime >= _timeToDisableStar)
         {
-  
-            DecreaseLevel?.Invoke(_currentWantedLevel);
 
             if(_currentWantedLevel > 1)
             {
-                DestroyOneStar();
+                _currentWantedLevel--;
             }
             else
             {
                 _currentWantedLevel = 0;
-                DisableStars();
-            }          
+             
+            }
+
+            DecreaseLevel?.Invoke(_currentWantedLevel);
+            DisableStars();
         }
     }
 
@@ -86,10 +88,15 @@ public class WantedLevel : MonoBehaviour
 
         _currentWantedLevel = _wantedPoints / _pointToOneLevel;
 
-        if(_currentWantedLevel > _previousWantedLevel)
+        if (_currentWantedLevel > _previousWantedLevel)
         {
             IncreaseLevel?.Invoke(_currentWantedLevel);
             _previousWantedLevel = _currentWantedLevel;
+
+            if (_currentWantedLevel != 0)
+            {
+                _pointToOneLevel *= _currentWantedLevel;
+            }
         }        
     }
 
@@ -102,52 +109,52 @@ public class WantedLevel : MonoBehaviour
         DisableStars();
     }
 
-    public void SetWantedLevel(int level)
-    {
-        if(_currentWantedLevel == _maxWantedLevel)
-        {
-            return;
-        }
+    //public void SetWantedLevel(int level)
+    //{
+    //    if(_currentWantedLevel == _maxWantedLevel)
+    //    {
+    //        return;
+    //    }
 
-        if(_currentWantedLevel > 0)
-        {
-            DisableStars();
-        }
+    //    if(_currentWantedLevel > 0)
+    //    {
+    //        DisableStars();
+    //    }
 
-        _currentWantedLevel = level;
+    //    _currentWantedLevel = level;
 
-        for (int i = 0; i < _currentWantedLevel; i++)
-        {
-            IncreaseLevel?.Invoke(_currentWantedLevel);
-            _previousWantedLevel = _currentWantedLevel;
-        }
+    //    for (int i = 0; i < _currentWantedLevel; i++)
+    //    {
+    //        IncreaseLevel?.Invoke(_currentWantedLevel);
+    //        _previousWantedLevel = _currentWantedLevel;
+    //    }
 
-        if(_currentWantedLevel == 1)
-        {
-            _timeToDisableStar = Time.time + _cooldownForOneStar;
-            _isTimerStart = true;
-        }
-        else if(_currentWantedLevel == 2)
-        {
-            _timeToDisableStar = Time.time + _cooldownTwoStar;
-            _isTimerStart = true;
-        }
-        else if(_currentWantedLevel == 3)
-        {
-            _timeToDisableStar = Time.time + _cooldownForThreeStar;
-            _isTimerStart = true;
-        }
-        else if(_currentWantedLevel == 4)
-        {
-            _timeToDisableStar = Time.time + _cooldownForFourStars;
-            _isTimerStart = true;
-        }
-        else if(_currentWantedLevel == 5)
-        {
-            _timeToDisableStar = Time.time + _cooldownForFiveStars;
-            _isTimerStart = true;
-        }
-    }
+    //    if(_currentWantedLevel == 1)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForOneStar;
+    //        _isTimerStart = true;
+    //    }
+    //    else if(_currentWantedLevel == 2)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownTwoStar;
+    //        _isTimerStart = true;
+    //    }
+    //    else if(_currentWantedLevel == 3)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForThreeStar;
+    //        _isTimerStart = true;
+    //    }
+    //    else if(_currentWantedLevel == 4)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForFourStars;
+    //        _isTimerStart = true;
+    //    }
+    //    else if(_currentWantedLevel == 5)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForFiveStars;
+    //        _isTimerStart = true;
+    //    }
+    //}
 
     private void DisableStars()
     {
@@ -157,27 +164,13 @@ public class WantedLevel : MonoBehaviour
         {
             Destroy(star.gameObject);
         }
-    }
 
-    public void UpDestroyedCar()
-    {
-        _destroyedCar++;
-
-        if(_destroyedCar == 1)
+        for (int i = 0; i < _currentWantedLevel; i++)
         {
-            SetWantedLevel(4);
+            IncreaseLevel?.Invoke(_currentWantedLevel);         
         }
-        else if(_destroyedCar == 3)
-        {
-            SetWantedLevel(5);
-        }
-    }
 
-    private void DestroyOneStar()
-    {
-        var stars = _starPanel.GetComponentsInChildren<Transform>();
-        var star = stars[^1];
-        _currentWantedLevel--;
+        _previousWantedLevel = _currentWantedLevel;
 
         if (_currentWantedLevel == 1)
         {
@@ -205,6 +198,63 @@ public class WantedLevel : MonoBehaviour
             _isTimerStart = true;
         }
 
-        Destroy(star.gameObject);
+        if (_currentWantedLevel != 0)
+        {
+            _pointToOneLevel *= _currentWantedLevel;
+        }
+        else
+        {
+            _pointToOneLevel = _startPointsToOneLevel;
+        }
+
     }
+
+    //public void UpDestroyedCar()
+    //{
+    //    _destroyedCar++;
+
+    //    if(_destroyedCar == 1)
+    //    {
+    //        SetWantedLevel(4);
+    //    }
+    //    else if(_destroyedCar == 3)
+    //    {
+    //        SetWantedLevel(5);
+    //    }
+    //}
+
+    //private void DestroyOneStar()
+    //{
+    //    var stars = _starPanel.GetComponentsInChildren<Transform>();
+    //    var star = stars[^1];
+    //    _currentWantedLevel--;
+
+    //    if (_currentWantedLevel == 1)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForOneStar;
+    //        _isTimerStart = true;
+    //    }
+    //    else if (_currentWantedLevel == 2)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownTwoStar;
+    //        _isTimerStart = true;
+    //    }
+    //    else if (_currentWantedLevel == 3)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForThreeStar;
+    //        _isTimerStart = true;
+    //    }
+    //    else if (_currentWantedLevel == 4)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForFourStars;
+    //        _isTimerStart = true;
+    //    }
+    //    else if (_currentWantedLevel == 5)
+    //    {
+    //        _timeToDisableStar = Time.time + _cooldownForFiveStars;
+    //        _isTimerStart = true;
+    //    }
+
+    //    Destroy(star.gameObject);
+    //}
 }

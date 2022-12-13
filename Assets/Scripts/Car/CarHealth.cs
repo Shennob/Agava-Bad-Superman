@@ -120,14 +120,14 @@ public class CarHealth : MonoBehaviour, IHitable
         if (_wantedLevel.CurrentWantedLevel == 5)
             return;
 
-        if (_wantedLevel.CurrentWantedLevel >= 2)
-        {
+        //if (_wantedLevel.CurrentWantedLevel >= 2)
+        //{
             _wantedLevel.AddPoints(_wantedPointsToAdd);
-        }
-        else
-        {
-            _wantedLevel.SetWantedLevel(2);
-        }
+        //}
+        //else
+        //{
+        //    _wantedLevel.SetWantedLevel(2);
+        //}
     }
 
     public void AddExpirience()

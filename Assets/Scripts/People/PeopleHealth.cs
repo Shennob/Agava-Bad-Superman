@@ -56,14 +56,14 @@ public class PeopleHealth : MonoBehaviour, IHitable
         if (_wantedLevel.CurrentWantedLevel == 5)
             return;
 
-        if (_wantedLevel.CurrentWantedLevel >= 2)
-        {
-            _wantedLevel.AddPoints(_wantedPointsToAdd);
-        }
-        else
-        {
-            _wantedLevel.SetWantedLevel(2);
-        }
+        //if (_wantedLevel.CurrentWantedLevel >= 2)
+        //{
+        _wantedLevel.AddPoints(_wantedPointsToAdd);
+        //}
+        //else
+        //{
+        //_wantedLevel.SetWantedLevel(2);
+        //}
     }
 
     private IEnumerator DestroyWithDelay()

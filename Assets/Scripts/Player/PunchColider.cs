@@ -17,19 +17,19 @@ public class PunchColider : MonoBehaviour
     {
         if(other.gameObject.TryGetComponent(out PeopleHealth peopleHealth) )
         {
-            if(_wantedLevel.CurrentWantedLevel < 1)
-            {
-                _wantedLevel.SetWantedLevel(1);
-            }
+            //if(_wantedLevel.CurrentWantedLevel < 1)
+            //{
+            //    _wantedLevel.SetWantedLevel(1);
+            //}
           
             peopleHealth.ApplyDamage(_damage);
         }
         else if(other.gameObject.TryGetComponent(out CarHealth carHealth))
         {
-            if (_wantedLevel.CurrentWantedLevel < 1)
-            {
-                _wantedLevel.SetWantedLevel(1);
-            }
+            //if (_wantedLevel.CurrentWantedLevel < 1)
+            //{
+            //    _wantedLevel.SetWantedLevel(1);
+            //}
 
             carHealth.ApplyDamage(_damage);
         }
